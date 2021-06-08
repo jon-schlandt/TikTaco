@@ -1,2 +1,2 @@
 # TikTaco
-An app for finding uniquely sharable taco recipes.
+An app for finding deliciously sharable taco recipes.
