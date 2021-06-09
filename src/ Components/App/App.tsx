@@ -1,9 +1,11 @@
-import TacoGeneration from '../TacoGenerator/TacoGenerator'
+import TacoGenerator from '../TacoGenerator/TacoGenerator'
 import './App.css';
 
 function App() {
   return (
-    <div className="App"></div>
+    <div className="App">
+      <TacoGenerator />
+    </div>
   );
 }
 
