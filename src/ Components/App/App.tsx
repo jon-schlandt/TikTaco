@@ -6,7 +6,7 @@ import TacoGenerator from '../TacoGenerator/TacoGenerator'
 import { getTacoData } from '../../utils/apiCalls'
 import './App.css';
 
-interface Taco {
+interface ITaco {
   base: string,
   mixin: string, 
   condiment: string, 
@@ -15,7 +15,7 @@ interface Taco {
 }
 
 function App() {
-  const [taco, setTaco] = useState<Taco>({
+  const [taco, setTaco] = useState<ITaco>({
     base: '',
     mixin: '',
     condiment: '',
@@ -28,13 +28,11 @@ function App() {
       .then(data => setTaco(data))
   }, [])
 
-  console.log(taco)
-
   return (
     <div className="App">
       <Header />
       <main>
-        <TacoGenerator />
+        <TacoGenerator taco={taco}/>
       </main>
     </div>
   );

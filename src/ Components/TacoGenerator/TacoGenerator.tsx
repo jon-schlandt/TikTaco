@@ -1,6 +1,7 @@
+import { ITaco } from '../../utils/types'
 import './TacoGenerator.css'
 
-export default function TacoGenerator() {
+export default function TacoGenerator({taco}: {taco: ITaco} ) {
   return (
     <div className='taco-generator'>
       <h1 className='greeting'>Good toppings!</h1>

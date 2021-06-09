@@ -1,20 +1,14 @@
-interface TacoData {
-  base_layer: { name: string },
-  mixin: { name: string }, 
-  condiment: { name: string }, 
-  seasoning: { name: string },
-  shell: { name: string }
+import { ITaco } from './types'
+
+interface ITacoData {
+  base_layer: { name: string, recipe: string },
+  mixin: { name: string, recipe: string }, 
+  condiment: { name: string, recipe: string }, 
+  seasoning: { name: string, recipe: string },
+  shell: { name: string, recipe: string }
 }
 
-interface Taco {
-  base: string, 
-  mixin: string,
-  condiment: string,
-  seasoning: string,
-  shell: string
-}
-
-export function cleanTacoData(data: TacoData): Taco {
+export function cleanTacoData(data: ITacoData): ITaco {
   const { base_layer, mixin, condiment, seasoning, shell } = data
   return {
     base: base_layer.name,
