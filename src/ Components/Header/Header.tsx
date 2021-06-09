@@ -2,6 +2,8 @@ import './Header.css'
 
 export default function Header() {
   return (
-    <header></header>
+    <header>
+      <h1 className='app-title'>TikTaco</h1>
+    </header>
   )
 }
