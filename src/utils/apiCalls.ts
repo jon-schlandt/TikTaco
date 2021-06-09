@@ -1,3 +1,5 @@
+import { cleanTacoData } from './utilites'
+
 export function getTacoData() {
   return fetch('http://taco-randomizer.herokuapp.com/random/')
     .then(resp => {
@@ -5,4 +7,5 @@ export function getTacoData() {
         return resp.json()
       }
     })
+    .then(data => cleanTacoData(data))
 }

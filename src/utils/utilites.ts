@@ -6,7 +6,15 @@ interface TacoData {
   shell: { name: string }
 }
 
-export function cleanTacoData(data: TacoData) {
+interface Taco {
+  base: string, 
+  mixin: string,
+  condiment: string,
+  seasoning: string,
+  shell: string
+}
+
+export function cleanTacoData(data: TacoData): Taco {
   const { base_layer, mixin, condiment, seasoning, shell } = data
   return {
     base: base_layer.name,
