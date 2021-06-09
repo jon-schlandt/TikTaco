@@ -7,7 +7,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <TacoGenerator />
+      <main>
+        <TacoGenerator />
+      </main>
     </div>
   );
 }
