@@ -1,7 +1,9 @@
 import './TacoGenerator.css'
 
-export default function TacoGeneration() {
+export default function TacoGenerator() {
   return (
-    <div></div>
+    <div className='taco-generator'>
+      <h1 className='greeting'>Good toppings!</h1>
+    </div>
   )
 }
