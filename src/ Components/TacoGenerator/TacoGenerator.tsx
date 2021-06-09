@@ -1,4 +1,4 @@
-import './TacoGeneration.css'
+import './TacoGenerator.css'
 
 export default function TacoGeneration() {
   return (
