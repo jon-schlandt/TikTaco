@@ -1,6 +1,7 @@
 header {
   grid-row: 1;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 0 16px;
   border-bottom: solid 1px rgb(0, 0, 0);
@@ -8,4 +9,8 @@ header {
 
 .app-title {
   font-size: 1em;
+}
+
+.favorites-btn {
+  width: 32px;
 }
