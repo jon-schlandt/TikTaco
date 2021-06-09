@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     getTacoData()
       .then(data => console.log(data))
-  })
+  }, [])
 
   return (
     <div className="App">
