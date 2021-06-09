@@ -1,3 +1,4 @@
+import TacoGeneration from '../TacoGenerator/TacoGenerator'
 import './App.css';
 
 function App() {
