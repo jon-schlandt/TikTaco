@@ -7,6 +7,7 @@ export default function TacoGenerator() {
       <div className='taco-display'>
         <p>Select the button below to generate a random taco.</p>
       </div>
+      <button>Generate taco</button>
     </div>
   )
 }

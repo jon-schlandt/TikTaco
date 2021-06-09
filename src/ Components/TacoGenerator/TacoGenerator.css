@@ -1,3 +1,8 @@
+.taco-generator {
+  display: flex;
+  flex-direction: column;
+}
+
 .greeting {
   font-size: 1.5em;
   margin-bottom: 16px;
@@ -5,6 +10,7 @@
 
 .taco-display {
   height: 256px;
+  margin-bottom: 16px;
   border: solid 1px rgb(0, 0, 0);
   border-radius: 8px;
 }
@@ -12,4 +18,13 @@
 .taco-display > p {
   margin: 16px;
   font-size: 1.25em;
+}
+
+.taco-generator > button {
+  background: unset;
+  align-self: center;
+  padding: 8px 16px;
+  border: solid thin rgb(0, 0, 0);
+  border-radius: 32px;
+  font-size: 1em;
 }
