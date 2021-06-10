@@ -2,6 +2,7 @@ import { Route } from 'react-router-dom'
 
 import Header from '../Header/Header'
 import TacoGenerator from '../TacoGenerator/TacoGenerator'
+import TacoDetails from '../TacoDetails/TacoDetails'
 
 import './App.css';
 
@@ -14,7 +15,7 @@ function App() {
           <TacoGenerator />
         </Route>
         <Route exact path='/details'>
-          
+          <TacoDetails />
         </Route>
       </main>
     </div>

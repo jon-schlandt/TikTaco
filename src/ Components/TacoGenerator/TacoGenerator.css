@@ -22,9 +22,9 @@
   font-size: 1.25em;
 }
 
-.generation-msg {
-  /* margin-bottom: 48px; */
-}
+/* .generation-msg {
+  margin-bottom: 48px;
+} */
 
 .taco-generator > button,
 .taco-generator > a {
