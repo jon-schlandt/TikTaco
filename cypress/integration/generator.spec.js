@@ -26,19 +26,23 @@ describe('Generate Taco button', () => {
   beforeEach('set up tests', () => {
     cy.setTacoIntercept()
     cy.visit('http://localhost:3000')
+    cy.get('.primary-btn').click()
   })
 
   it('should generate a random taco that displays in the taco display when clicked', () => {
-    cy.get('.primary-btn').click()
-
     cy.get('.taco-display')
       .find('p').contains('Baked Tilapia with Black Olives, ganished with Lettuce (Traditional; US) topped off with Mahi Mahi Rub and wrapped in a delicious Fresh Corn Tortillas')
   })
 
-  it('should update its inner text to \'View Details when clicked', () => {
-    cy.get('.primary-btn').eq(0).click()
-
+  it('should update its inner text to \'View Details\' when clicked', () => {
     cy.get('.primary-btn').should('be.visible')
       .contains('View Details')
+  })
+
+  it('should render a secondary \'Generate another?\' button directly below it when clicked', () => {
+    cy.get('.primary-btn').next('button')
+      .should('be.visible')
+      .should('have.class', 'secondary-btn')
+      .contains('Generate another?')
   })
 })
