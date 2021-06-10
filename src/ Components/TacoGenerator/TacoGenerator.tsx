@@ -42,7 +42,7 @@ export default function TacoGenerator() {
       {taco &&
         <>
           <PrimaryButton 
-            text='Get Recipe'
+            text='View Details'
           />
           <SecondaryButton 
             text='Generate another?'

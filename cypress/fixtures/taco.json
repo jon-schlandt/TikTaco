@@ -1,0 +1,32 @@
+{
+  "mixin": {
+    "recipe": "Lettuce (Traditional; US)\n======================\n\nIn a traditional American taco, lettuce serves to add extra crunch and coolness. Favor the bulkier lettuces over leafier fare such as Bibb lettuces or mesclun.\n\n* Iceberg Lettuce (shredded)\n* Romaine Lettuce (shredded; maintain the stalks)\n\ntags: vegetarian, vegan\n",
+    "name": "Lettuce (Traditional; US)",
+    "url": "https://raw.github.com/sinker/tacofancy/master/mixins/lettuce_traditional_us.md",
+    "slug": "lettuce_traditional_us"
+  },
+  "base_layer": {
+    "recipe": "Baked Tilapia\n=============\n\nOven fried fish for when you think you want to pretend you're eating healthier.\n\n* 1 pound mild fish (I usually use tilapia)\n* 1 cup masa\n* 2 tsp salt\n* 1/2 to 1 tsp cayenne\n* 2 tsp paprika\n* 2 tsps chili powder\n* 2 tsps garlic powder\n* 1/2 to 1 tsp black pepper (to taste)\n* olive oil\n\n\n1. Preheat oven to 400 degrees.\n2. Mix dry ingredients in a bowl to make the coating for the fish.\n3. Cut fish into slices or chunks, as your taste desires. \n4. Drizzle olive oil over cut fish, and dip fish into breading.\n5. Bake for 8ish minutes and finish, if you can, under the broiler.",
+    "name": "Baked Tilapia",
+    "url": "https://raw.github.com/sinker/tacofancy/master/base_layers/baked_tilapia.md",
+    "slug": "baked_tilapia"
+  },
+  "condiment": {
+    "recipe": "Black Olives\n==========\n\nCanned black olives add a sweet and cool meatiness to a traditional American taco.\n\ntags: vegetarian, vegan\n",
+    "name": "Black Olives",
+    "url": "https://raw.github.com/sinker/tacofancy/master/condiments/black_olives.md",
+    "slug": "black_olives"
+  },
+  "shell": {
+    "recipe": "Fresh Corn Tortillas\n===================\n\nThis is the only way to go. So worth it. Makes roughly 15 tortillas.\n\n* 1 3/4 cups masa harina\n* 1 1/8 cups water\n\n1. In a medium bowl, mix together masa harina and hot water until thoroughly combined. Turn dough onto a clean surface and knead until pliable and smooth. If dough is too sticky, add more masa harina; if it begins to dry out, sprinkle with water. Cover dough tightly with plastic wrap and allow to stand for 30 minutes.\n2. Preheat a cast iron skillet or griddle to medium-high.\n3. Divide dough into 15 equal-size balls. Using a tortilla press (or a rolling pin), press each ball of dough flat between two sheets of wax paper (plastic wrap or a freezer bag cut into halves will also work).\n4. Place tortilla in preheated pan and allow to cook for approximately 30 seconds, or until browned and slightly puffy. Turn tortilla over to brown on second side for approximately 30 seconds more, then transfer to a plate. Repeat process with each ball of dough. Keep tortillas covered with a towel to stay warm and moist (or a low temp oven) until ready to serve.\n\ntags: vegetarian, vegan\n",
+    "name": "Fresh Corn Tortillas",
+    "url": "https://raw.github.com/sinker/tacofancy/master/shells/Fresh_corn_tortillas.md",
+    "slug": "fresh_corn_tortillas"
+  },
+  "seasoning": {
+    "recipe": "Mahi Mahi Rub\n==============\n\nA rub for Mahi Mahi, if fish tacos be what you're fancying:\n\n* 1 Part spicy chili powder\n* 1 Part salt\n* 1 Part ground cumin\n* 1/2 Part chopped cilantro\n* 1/2 Part cayenne\n* 1/2 Part pepper\n* 1/2 Part oregano\n* 1/2 Part onion powder\n* 1/2 Part garlic powder\n\nYou choose your measurements and enjoy!\n\ntags: vegetarian, vegan\n",
+    "name": "Mahi Mahi Rub",
+    "url": "https://raw.github.com/sinker/tacofancy/master/seasonings/mahimahirub.md",
+    "slug": "mahi_mahi_rub"
+  }
+}
