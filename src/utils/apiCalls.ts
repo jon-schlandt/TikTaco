@@ -3,7 +3,7 @@ import { cleanTacoData } from './utilites'
 // ***** ----- Data fetching ----- ***** //
 
 export function getTacoData() {
-  return fetch('http://httpstat.us/500')
+  return fetch('http://taco-randomizer.herokuapp.com/random/')
     .then(resp => {
       return checkResponse(resp)
     })
