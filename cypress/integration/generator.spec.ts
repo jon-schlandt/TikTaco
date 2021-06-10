@@ -1,6 +1,6 @@
 export {}
 
-describe('TacoGenerator', () => {
+describe('TacoGenerator on first load', () => {
   beforeEach('set up tests', () => {
     cy.visit('http://localhost:3000')
   })
@@ -17,9 +17,21 @@ describe('TacoGenerator', () => {
       .contains('Select the button below to generate a random taco.')
   })
 
-  it('should have a button for generating a random taco', () => {
+  it('should only display a button for generating a random taco', () => {
     cy.get('.taco-generator')
       .find('button').should('be.visible')
       .contains('Generate Taco')
+  })
+})
+
+describe('Generate Taco button', () => {
+  beforeEach('set up tests', () => {
+    cy.visit('http://localhost:3000')
+  })
+
+  it('should generate a random taco that displays in the taco display', () => {
+    cy.get('button').click()
+
+    cy.get('.taco-display')
   })
 })
