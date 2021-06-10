@@ -16,9 +16,11 @@ export default function TacoGenerator() {
       .then(data => setTaco(data))
   }
 
-  const tacoText = (
-    <p>{`${taco?.base} with ${taco?.condiment}, ganished with ${taco?.mixin} topped off with ${taco?.seasoning} and wrapped in a delicious ${taco?.shell}`}</p>
-  )
+  const formatTacoText = () => {
+    return (
+      <p>{`${taco?.base} with ${taco?.condiment}, ganished with ${taco?.mixin} topped off with ${taco?.seasoning} and wrapped in a delicious ${taco?.shell}`}</p>
+    )
+  }
 
   return (
     <div className='taco-generator'>
@@ -26,7 +28,7 @@ export default function TacoGenerator() {
       <div className='taco-display'>
         {!taco 
           ? <p>Select the button below to generate a random taco.</p>
-          : tacoText
+          : formatTacoText()
         }
       </div>
       {!taco &&
