@@ -1,6 +1,8 @@
 .taco-generator {
+  max-width: 900px;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 .greeting {
