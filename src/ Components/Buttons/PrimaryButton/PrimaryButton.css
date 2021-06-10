@@ -5,4 +5,5 @@
   border: solid thin rgb(0, 0, 0);
   border-radius: 32px;
   font-size: 1em;
+  cursor: pointer;
 }

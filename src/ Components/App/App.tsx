@@ -1,3 +1,5 @@
+import { Route } from 'react-router-dom'
+
 import Header from '../Header/Header'
 import TacoGenerator from '../TacoGenerator/TacoGenerator'
 
@@ -8,7 +10,12 @@ function App() {
     <div className="App">
       <Header />
       <main>
-        <TacoGenerator />
+        <Route exact path='/'>
+          <TacoGenerator />
+        </Route>
+        <Route exact path='/details'>
+          
+        </Route>
       </main>
     </div>
   );
