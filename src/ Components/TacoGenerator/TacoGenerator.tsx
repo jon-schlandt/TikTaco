@@ -30,26 +30,20 @@ export default function TacoGenerator() {
         }
       </div>
       {!taco &&
-        <button 
-          className='generate-btn'
-          onClick={generateTaco}
-        >
-          Generate Taco
-        </button>
+        <PrimaryButton
+          text='Generate Taco'
+          handleClick={generateTaco}
+        />
       }
       {taco &&
         <>
-          <button 
-            className='generate-btn'
-          >
-            Get Recipe
-          </button>
-          <button
-            className='generate-another-btn'
-            onClick={generateTaco}
-          >
-            Generate another?
-          </button>
+          <PrimaryButton 
+            text='Get Recipe'
+          />
+          <SecondaryButton 
+            text='Generate another?'
+            handleClick={generateTaco}
+          />
         </>
       }
     </div>

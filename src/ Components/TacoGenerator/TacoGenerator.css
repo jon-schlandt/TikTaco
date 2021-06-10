@@ -20,6 +20,10 @@
   font-size: 1.25em;
 }
 
+.taco-generator > button {
+  align-self: center;
+}
+
 .generate-btn {
   background: unset;
   align-self: center;
