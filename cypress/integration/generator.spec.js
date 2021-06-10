@@ -57,4 +57,14 @@ describe('Error handling', () => {
     cy.get('.taco-display')
       .find('p').contains('Sorry, taco not found. Please try again.')
   })
+
+  it('should display an information error in the taco display when a 500 is returned', () => {
+    cy.setErrorIntercept(500)
+    cy.visit('http://localhost:3000')
+
+    cy.get('.primary-btn').click()
+
+    cy.get('.taco-display')
+      .find('p').contains('Sorry, our taco generator is having some difficulties. Please try again.')
+  })  
 })
