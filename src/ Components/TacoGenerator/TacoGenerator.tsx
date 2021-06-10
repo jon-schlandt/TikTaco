@@ -8,16 +8,7 @@ import { ITaco } from '../../utils/types'
 import { getTacoData } from '../../utils/apiCalls'
 import './TacoGenerator.css'
 
-export default function TacoGenerator() {
-  const [taco, setTaco] = useState<ITaco | null>(null)
-  const [error, setError] = useState('')
-
-  const generateTaco = () => {
-    getTacoData()
-      .then(data => setTaco(data))
-      .catch(error => setError(error.message))
-  }
-
+export default function TacoGenerator({taco, error, handleClick}: {handleClick: () => void}) {
   const formatTacoText = () => {
     return (
       <p className='taco-text'>{`${taco?.base} with ${taco?.condiment}, ganished with ${taco?.mixin} topped off with ${taco?.seasoning} and wrapped in a delicious ${taco?.shell}`}</p>
@@ -37,7 +28,7 @@ export default function TacoGenerator() {
       {!taco &&
         <PrimaryButton
           text='Generate Taco'
-          handleClick={generateTaco}
+          handleClick={handleClick}
         />
       }
       {taco &&
@@ -49,7 +40,7 @@ export default function TacoGenerator() {
           </Link>
           <SecondaryButton 
             text='Generate another?'
-            handleClick={generateTaco}
+            handleClick={handleClick}
           />
         </>
       }

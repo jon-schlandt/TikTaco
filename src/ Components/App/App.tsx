@@ -25,7 +25,9 @@ function App() {
       <Header />
       <main>
         <Route exact path='/'>
-          <TacoGenerator />
+          <TacoGenerator 
+            handleClick={generateTaco}
+          />
         </Route>
         <Route exact path='/details'>
           <TacoDetails />
