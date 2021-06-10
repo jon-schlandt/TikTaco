@@ -26,6 +26,7 @@ describe('TacoGenerator on first load', () => {
 
 describe('Generate Taco button', () => {
   beforeEach('set up tests', () => {
+    cy.addTacoIntercept()
     cy.visit('http://localhost:3000')
   })
 
