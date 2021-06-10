@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header>
       <h1 className='app-title'>TikTaco</h1>
-      <button className='favorites-btn'></button>
+      <img className='favorites-btn'src={favoritesBtn} alt='favorite button'/>
     </header>
   )
 }
