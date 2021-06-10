@@ -14,7 +14,7 @@ interface IToppingData {
 }
 
 interface ICleanedTacoData {
-  names: ITaco,
+  toppings: ITaco,
   urls: ITaco
 }
 
@@ -22,7 +22,7 @@ export function cleanTacoData(data: ITacoData): ICleanedTacoData {
   console.log(data)
   const { base_layer, mixin, condiment, seasoning, shell } = data
   return {
-    names: {
+    toppings: {
       base: base_layer.name,
       mixin: mixin.name,
       condiment: condiment.name,

@@ -10,8 +10,13 @@ import { ITaco } from '../../utils/types'
 
 import './App.css';
 
+interface IState {
+  toppings: ITaco,
+  urls: ITaco
+}
+
 function App() {
-  const [taco, setTaco] = useState<ITaco | null>(null)
+  const [taco, setTaco] = useState<IState | null>(null)
   const [error, setError] = useState('')
 
   const generateTaco = () => {
@@ -26,7 +31,7 @@ function App() {
       <main>
         <Route exact path='/'>
           <TacoGenerator 
-            taco={taco}
+            taco={taco && taco.toppings}
             error={error}
             handleClick={generateTaco}
           />
