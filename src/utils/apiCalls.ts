@@ -3,7 +3,7 @@ import { cleanTacoData } from './utilites'
 // ***** ----- Data fetching ----- ***** //
 
 export function getTacoData() {
-  return fetch('http://taco-randomizer.herokuapp.com/random/')
+  return fetch('http://httpstat.us/500')
     .then(resp => {
       return checkResponse(resp)
     })
@@ -21,12 +21,12 @@ function checkResponse(resp: Response) {
 
 function handleError(resp: Response) {
   if (resp.status === 404) {
-    throw Error('Sorry, taco not found. Try again.')
+    throw Error('Sorry, taco not found. Please try again.')
   }
 
   if (resp.status === 500) {
-    throw Error('Sorry, our taco generator isn\'t working. Try again.')
+    throw Error('Sorry, our taco generator is having some difficulties. Please try again.')
   }
 
-  throw Error('Sorry, a problem occurred. Try again.')
+  throw Error('Sorry, a problem occurred. Please try again.')
 }
