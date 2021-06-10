@@ -31,7 +31,7 @@ export default function TacoGenerator() {
           className='generate-btn'
           onClick={generateTaco}
         >
-          {!taco ? 'Generate taco' : 'Get recipes'}
+          Generate Taco
         </button>
       }
       {taco &&
@@ -39,13 +39,13 @@ export default function TacoGenerator() {
           <button 
             className='generate-btn'
           >
-            Get recipes
+            Get Recipe
           </button>
           <button
             className='generate-another-btn'
             onClick={generateTaco}
           >
-            Generate another
+            Generate another?
           </button>
         </>
       }
