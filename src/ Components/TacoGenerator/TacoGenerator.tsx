@@ -1,14 +1,18 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import PrimaryButton from '../Buttons/PrimaryButton/PrimaryButton'
 import SecondaryButton from '../Buttons/SecondaryButton/SecondaryButton'
 
 import { ITaco } from '../../utils/types'
-import { getTacoData } from '../../utils/apiCalls'
 import './TacoGenerator.css'
 
-export default function TacoGenerator({taco, error, handleClick}: {handleClick: () => void}) {
+interface IProps {
+  taco: ITaco,
+  error: string,
+  handleClick: () => void
+}
+
+export default function TacoGenerator({taco, error, handleClick}: IProps) {
   const formatTacoText = () => {
     return (
       <p className='taco-text'>{`${taco?.base} with ${taco?.condiment}, ganished with ${taco?.mixin} topped off with ${taco?.seasoning} and wrapped in a delicious ${taco?.shell}`}</p>

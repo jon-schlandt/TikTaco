@@ -26,6 +26,8 @@ function App() {
       <main>
         <Route exact path='/'>
           <TacoGenerator 
+            taco={taco}
+            error={error}
             handleClick={generateTaco}
           />
         </Route>
