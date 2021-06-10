@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import PrimaryButton from '../Buttons/PrimaryButton/PrimaryButton'
 import SecondaryButton from '../Buttons/SecondaryButton/SecondaryButton'
@@ -41,9 +42,11 @@ export default function TacoGenerator() {
       }
       {taco &&
         <>
-          <PrimaryButton 
-            text='View Details'
-          />
+          <Link to='/details'>
+            <PrimaryButton 
+              text='View Details'
+            />
+          </Link>
           <SecondaryButton 
             text='Generate another?'
             handleClick={generateTaco}

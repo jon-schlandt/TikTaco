@@ -18,31 +18,15 @@
 
 .generation-msg,
 .taco-text {
-  margin: 24px;
+  margin: 16px;
   font-size: 1.25em;
 }
 
 .generation-msg {
-  margin-bottom: 48px;
+  /* margin-bottom: 48px; */
 }
 
-.taco-generator > button {
+.taco-generator > button,
+.taco-generator > a {
   align-self: center;
-}
-
-.generate-btn {
-  background: unset;
-  align-self: center;
-  margin-bottom: 8px;
-  padding: 8px 16px;
-  border: solid thin rgb(0, 0, 0);
-  border-radius: 32px;
-  font-size: 1em;
-}
-
-.generate-another-btn {
-  background: unset;
-  align-self: center;
-  border: unset;
-  font-size: 1em;
 }
