@@ -20,11 +20,19 @@
   font-size: 1.25em;
 }
 
-.taco-generator > button {
+.generate-btn {
   background: unset;
   align-self: center;
+  margin-bottom: 8px;
   padding: 8px 16px;
   border: solid thin rgb(0, 0, 0);
   border-radius: 32px;
+  font-size: 1em;
+}
+
+.generate-another-btn {
+  background: unset;
+  align-self: center;
+  border: unset;
   font-size: 1em;
 }
