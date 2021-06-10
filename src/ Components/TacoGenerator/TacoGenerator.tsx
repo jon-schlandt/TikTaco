@@ -1,5 +1,8 @@
 import { useState } from 'react'
 
+import PrimaryButton from '../Buttons/PrimaryButton/PrimaryButton'
+import SecondaryButton from '../Buttons/SecondaryButton/SecondaryButton'
+
 import { ITaco } from '../../utils/types'
 import { getTacoData } from '../../utils/apiCalls'
 
