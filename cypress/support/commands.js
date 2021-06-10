@@ -30,3 +30,7 @@ Cypress.Commands.add('setTacoIntercept', () => {
   cy.fixture('../fixtures/taco.json')
     .then(taco => cy.intercept('http://taco-randomizer.herokuapp.com/random/', taco))
 })
+
+Cypress.Commands.add('setErrorIntercept', (statusCode) => {
+  cy.intercept('http://taco-randomizer.herokuapp.com/random/', {statusCode})
+})

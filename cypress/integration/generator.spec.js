@@ -46,3 +46,15 @@ describe('Generate Taco button', () => {
       .contains('Generate another?')
   })
 })
+
+describe('Error handling', () => {
+  it('should display an informative error in the taco display when a 404 is returned', () => {
+    cy.setErrorIntercept(404)
+    cy.visit('http://localhost:3000')
+
+    cy.get('.primary-btn').click()
+
+    cy.get('.taco-display')
+      .find('p').contains('Sorry, taco not found. Please try again.')
+  })
+})
