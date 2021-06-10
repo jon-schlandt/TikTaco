@@ -26,18 +26,28 @@ export default function TacoGenerator() {
           : tacoText
         }
       </div>
-      <button 
-        className='generate-btn'
-        onClick={generateTaco}
-      >
-        {!taco ? 'Generate taco' : 'Get recipes'}
-      </button>
-      {taco && 
-        <button
-          className='generate-another-btn'
+      {!taco &&
+        <button 
+          className='generate-btn'
+          onClick={generateTaco}
         >
-          Generate another
+          {!taco ? 'Generate taco' : 'Get recipes'}
         </button>
+      }
+      {taco &&
+        <>
+          <button 
+            className='generate-btn'
+          >
+            Get recipes
+          </button>
+          <button
+            className='generate-another-btn'
+            onClick={generateTaco}
+          >
+            Generate another
+          </button>
+        </>
       }
     </div>
   )
