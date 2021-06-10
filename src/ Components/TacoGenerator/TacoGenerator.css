@@ -11,15 +11,19 @@
 }
 
 .taco-display {
-  height: 256px;
   margin-bottom: 16px;
   border: solid 1px rgb(0, 0, 0);
   border-radius: 8px;
 }
 
-.taco-display > p {
-  margin: 16px;
+.generation-msg,
+.taco-text {
+  margin: 24px;
   font-size: 1.25em;
+}
+
+.generation-msg {
+  margin-bottom: 48px;
 }
 
 .taco-generator > button {
