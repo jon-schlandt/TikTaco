@@ -8,16 +8,33 @@ interface ITacoData {
   shell: IToppingData
 }
 
-interface IToppingData { name: string, recipe: string, url: string}
+interface IToppingData { 
+  name: string,
+  url: string
+}
 
-export function cleanTacoData(data: ITacoData): ITaco {
+interface ICleanedTacoData {
+  names: ITaco,
+  urls: ITaco
+}
+
+export function cleanTacoData(data: ITacoData): ICleanedTacoData {
   console.log(data)
   const { base_layer, mixin, condiment, seasoning, shell } = data
   return {
-    base: base_layer.name,
-    mixin: mixin.name,
-    condiment: condiment.name,
-    seasoning: seasoning.name,
-    shell: shell.name
+    names: {
+      base: base_layer.name,
+      mixin: mixin.name,
+      condiment: condiment.name,
+      seasoning: seasoning.name,
+      shell: shell.name
+    },
+    urls: {
+      base: base_layer.url,
+      mixin: mixin.url,
+      condiment: condiment.url,
+      seasoning: seasoning.url,
+      shell: shell.url
+    }
   }
 }
