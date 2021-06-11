@@ -1,6 +1,6 @@
 import { ITaco } from './types'
 
-interface ITacoData {
+export interface ITacoData {
   base_layer: IToppingData,
   mixin: IToppingData, 
   condiment: IToppingData, 
@@ -16,7 +16,7 @@ interface IToppingData {
 export function cleanTacoData(data: ITacoData) {
   const { base_layer, mixin, condiment, seasoning, shell } = data
   return {
-    base: {
+    base_layer: {
       name: base_layer.name,
       url: base_layer.url
     },

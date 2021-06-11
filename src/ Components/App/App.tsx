@@ -6,17 +6,12 @@ import TacoGenerator from '../TacoGenerator/TacoGenerator'
 import TacoDetails from '../TacoDetails/TacoDetails'
 
 import { getTacoData } from '../../utils/apiCalls'
-import { ITaco } from '../../utils/types'
+import { ITacoData } from '../../utils/utilites'
 
 import './App.css';
 
-interface IState {
-  toppings: ITaco,
-  urls: ITaco
-}
-
 function App() {
-  const [taco, setTaco] = useState<IState | null>(null)
+  const [taco, setTaco] = useState<ITacoData | null>(null)
   const [error, setError] = useState('')
 
   const generateTaco = () => {
@@ -25,13 +20,19 @@ function App() {
       .catch(error => setError(error.message))
   }
 
+  const formatTacoText = () => {
+    return (
+      <p className='taco-text'>{`${taco.base_layer.name} with ${taco.condiment.name}, ganished with ${taco.mixin.name} topped off with ${taco.seasoning.name} and wrapped in a delicious ${taco.shell.name}`}</p>
+    )
+  }
+
   return (
     <div className="App">
       <Header />
       <main>
         <Route exact path='/'>
           <TacoGenerator 
-            taco={taco && taco.toppings}
+            taco={taco && formatTacoText()}
             error={error}
             handleClick={generateTaco}
           />
