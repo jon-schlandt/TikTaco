@@ -1,41 +1,34 @@
+import { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 
 import PrimaryButton from '../Buttons/PrimaryButton/PrimaryButton'
 import SecondaryButton from '../Buttons/SecondaryButton/SecondaryButton'
-
-import { ITaco } from '../../utils/types'
 import './TacoGenerator.css'
 
 interface IProps {
-  taco: ITaco,
+  tacoText: ReactNode,
   error: string,
   handleClick: () => void
 }
 
-export default function TacoGenerator({taco, error, handleClick}: IProps) {
-  const formatTacoText = () => {
-    return (
-      <p className='taco-text'>{`${taco?.base} with ${taco?.condiment}, ganished with ${taco?.mixin} topped off with ${taco?.seasoning} and wrapped in a delicious ${taco?.shell}`}</p>
-    )
-  }
-
+export default function TacoGenerator({tacoText, error, handleClick}: IProps) {
   return (
     <div className='taco-generator'>
       <h1 className='greeting'>Good toppings!</h1>
       <div className='taco-display'>
         {error && <p>{error}</p>}
-        {!taco
+        {!tacoText
           ? !error && <p className='generation-msg'>Select the button below to generate a random taco.</p>
-          : formatTacoText()
+          : tacoText
         }
       </div>
-      {!taco &&
+      {!tacoText &&
         <PrimaryButton
           text='Generate Taco'
           handleClick={handleClick}
         />
       }
-      {taco &&
+      {tacoText &&
         <>
           <Link to='/details'>
             <PrimaryButton 

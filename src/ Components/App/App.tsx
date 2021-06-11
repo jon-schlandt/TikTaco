@@ -32,7 +32,7 @@ function App() {
       <main>
         <Route exact path='/'>
           <TacoGenerator 
-            taco={taco && formatTacoText()}
+            tacoText={taco && formatTacoText()}
             error={error}
             handleClick={generateTaco}
           />
