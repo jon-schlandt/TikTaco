@@ -6,27 +6,22 @@ import TacoGenerator from '../TacoGenerator/TacoGenerator'
 import TacoDetails from '../TacoDetails/TacoDetails'
 
 import { getTacoDetails } from '../../utils/apiCalls'
-import { ITacoData } from '../../utils/utilites'
+import { IShapedTacoDetails } from '../../utils/utilites'
 
 import './App.css';
 
 function App() {
-  const [tacoDetails, setTacoDetails] = useState<ITacoData | null>(null)
+  const [tacoDetails, setTacoDetails] = useState<IShapedTacoDetails | null>(null)
   const [error, setError] = useState('')
 
   const generateTaco = () => {
     getTacoDetails()
-      .then(data => setTacoDetails(data))
+      .then(data => {
+        window.sessionStorage.setItem('tacoDetails', JSON.stringify(data))
+        setTacoDetails(data)
+      })
       .catch(error => setError(error.message))
   }
-
-  const formatDisplayText = () => {
-    return (
-      <p className='taco-text'>{`${tacoDetails.base_layer.name} with ${tacoDetails.condiment.name}, ganished with ${tacoDetails.mixin.name} topped off with ${tacoDetails.seasoning.name} and wrapped in a delicious ${tacoDetails.shell.name}`}</p>
-    )
-  }
-
-  console.log(tacoDetails)
 
   return (
     <div className="App">
@@ -34,16 +29,19 @@ function App() {
       <main>
         <Route exact path='/'>
           <TacoGenerator 
-            tacoText={tacoDetails && formatDisplayText()}
+            tacoDetails={tacoDetails}
             error={error}
             handleClick={generateTaco}
           />
         </Route>
         <Route exact path='/details'>
-          {tacoDetails &&
+          {(tacoDetails || window.sessionStorage.getItem('tacoDetails')) &&
             <TacoDetails 
-              displayText={formatDisplayText()}
-              tacoDetails={tacoDetails}
+              tacoDetails={
+                tacoDetails
+                  ? tacoDetails
+                  : JSON.parse(window.sessionStorage.getItem('tacoDetails'))
+              }
             />
           }
         </Route>

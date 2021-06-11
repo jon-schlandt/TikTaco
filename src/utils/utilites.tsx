@@ -3,7 +3,7 @@ interface ITacoDetails {
   tacoImage: { urls: { regular: string}}
 }
 
-interface IShapedTacoDetails extends ITacoData {
+export interface IShapedTacoDetails extends ITacoData {
   image: string
 }
 
@@ -45,4 +45,10 @@ export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
     },
     image: data.tacoImage.urls.regular
   }
+}
+
+export function formatDisplayText(tacoDetails: IShapedTacoDetails) {
+  return (
+    <p className='display-text'>{`${tacoDetails.base_layer.name} with ${tacoDetails.condiment.name}, ganished with ${tacoDetails.mixin.name} topped off with ${tacoDetails.seasoning.name} and wrapped in a delicious ${tacoDetails.shell.name}`}</p>
+  )
 }

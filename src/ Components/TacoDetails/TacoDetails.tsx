@@ -1,15 +1,34 @@
-import { ReactNode } from 'react'
+import { Link } from 'react-router-dom'
 
-import { ITacoData } from '../../utils/utilites'
+import { formatDisplayText, IShapedTacoDetails } from '../../utils/utilites'
 import './TacoDetails.css'
 
 interface IProps {
-  displayText: ReactNode,
-  tacoDetails: ITacoData
+  tacoDetails: IShapedTacoDetails
 }
 
-export default function TacoDetails({displayText, tacoDetails}: IProps) {
+export default function TacoDetails({tacoDetails}: IProps) {
+  const displayText = formatDisplayText(tacoDetails)
+
   return (
-    <div></div>
+    <div className='taco-details'>
+      <div className='taco-image'>
+        <Link 
+          to='/'
+          className='back-btn'
+        />
+        <button className='favorite-btn'></button>
+        <img src={tacoDetails.image} alt={`${tacoDetails.base_layer.name} taco`} />
+      </div>
+      {displayText}
+      <ul className='recipe-list'>
+        <h1>Recipes</h1>
+        <li><a href={tacoDetails.base_layer.url}>{tacoDetails.base_layer.name}</a></li>
+        <li><a href={tacoDetails.mixin.url}>{tacoDetails.mixin.name}</a></li>
+        <li><a href={tacoDetails.condiment.url}>{tacoDetails.condiment.name}</a></li>
+        <li><a href={tacoDetails.seasoning.url}>{tacoDetails.seasoning.name}</a></li>
+        <li><a href={tacoDetails.shell.url}>{tacoDetails.shell.name}</a></li>
+      </ul>
+    </div>
   )
 }
