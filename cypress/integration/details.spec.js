@@ -18,9 +18,14 @@ describe('TacoDetails on render', () => {
   it('should display an image of a taco', () => {
     cy.fixture('../fixtures/taco-image.json')
       .then(image => {
-        cy.get('.taco-image > img')
+        cy.get('.taco-image > img').should('be.visible')
           .should('have.attr', 'src', image.urls.regular)
           .should('have.attr', 'alt', 'Baked Tilapia taco')
       })
+  })
+
+  it('should render display text for a taco', () => {
+    cy.get('.display-text').should('be.visible')
+      .contains('Baked Tilapia with Black Olives, ganished with Lettuce (Traditional; US) topped off with Mahi Mahi Rub and wrapped in a delicious Fresh Corn Tortillas')
   })
 })
