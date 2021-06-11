@@ -1,0 +1,16 @@
+.taco-image {
+  /* width: 100%; */
+  height: 128px;
+  margin-bottom: 16px;
+}
+
+.taco-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.taco-details > .display-text {
+  margin: unset;
+}

@@ -6,8 +6,14 @@ interface IProps {
 }
 
 export default function TacoDetails({tacoDetails}: IProps) {
-  console.log(formatDisplayText(tacoDetails))
+  const displayText = formatDisplayText(tacoDetails)
+
   return (
-    <div></div>
+    <div className='taco-details'>
+      <div className='taco-image'>
+        <img src={tacoDetails.image} alt='image of taco' />
+      </div>
+      {displayText}
+    </div>
   )
 }
