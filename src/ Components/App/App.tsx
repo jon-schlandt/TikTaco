@@ -24,8 +24,8 @@ function App() {
       .catch(error => setError(error.message))
   }
 
-  const toggleFavorite = () => {
-
+  const toggleFavorite = (tacoDetails: IShapedTacoDetails) => {
+    console.log(tacoDetails)
   }
 
   return (
