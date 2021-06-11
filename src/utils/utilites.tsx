@@ -22,6 +22,7 @@ interface IToppingData {
 
 export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
   const { base_layer, mixin, condiment, seasoning, shell } = data.tacoData
+  
   return { 
     base_layer: {
       name: base_layer.name,

@@ -1,4 +1,4 @@
-describe('TacoGenerator on first load', () => {
+describe('TacoGenerator on first render', () => {
   beforeEach('set up tests', () => {
     cy.visit('http://localhost:3000')
   })
