@@ -1,24 +1,23 @@
-import { cleanTacoData } from './utilites'
+import { shapeTacoDetails, ITacoData } from './utilites'
 
 // ***** ----- Data fetching ----- ***** //
 
 export async function getTacoDetails() {
-  const tacoData = await getTacoData();
-  const tacoImage = await getTacoImage();
+  const tacoData: ITacoData  = await getTacoData();
+  const tacoImage: { urls: { regular: string}} = await getTacoImage();
+
+  return Promise.all([tacoData, tacoImage])
+    .then(data => shapeTacoDetails({ tacoData: data[0], tacoImage: data[1] }))
 }
 
-function getTacoData() {
-  return fetch('http://taco-randomizer.herokuapp.com/random/')
-    .then(resp => {
-      return checkResponse(resp)
-    })
+async function getTacoData() {
+  const resp = await fetch('http://taco-randomizer.herokuapp.com/random/');
+  return checkResponse(resp);
 }
 
-function getTacoImage() {
-  return fetch('https://api.unsplash.com/photos/random?query=taco', {headers: { Authorization: 'Client-ID SVh3qN5qzhFdLisOJQj9vdBuBYOFNI6FNPrWcweQsZM' }})
-    .then(resp => {
-      return checkResponse(resp)
-    })
+async function getTacoImage() {
+  const resp = await fetch('https://api.unsplash.com/photos/random?query=taco', { headers: { Authorization: 'Client-ID SVh3qN5qzhFdLisOJQj9vdBuBYOFNI6FNPrWcweQsZM' } });
+  return checkResponse(resp);
 }
 
 // ***** ----- Error handling ----- ***** //

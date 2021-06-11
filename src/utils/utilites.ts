@@ -1,3 +1,12 @@
+interface ITacoDetails {
+  tacoData: ITacoData,
+  tacoImage: { urls: { regular: string}}
+}
+
+interface IShapedTacoDetails extends ITacoData {
+  image: string
+}
+
 export interface ITacoData {
   base_layer: IToppingData,
   mixin: IToppingData, 
@@ -11,9 +20,9 @@ interface IToppingData {
   url: string
 }
 
-export function cleanTacoData(data: ITacoData) {
-  const { base_layer, mixin, condiment, seasoning, shell } = data
-  return {
+export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
+  const { base_layer, mixin, condiment, seasoning, shell } = data.tacoData
+  return { 
     base_layer: {
       name: base_layer.name,
       url: base_layer.url
@@ -33,6 +42,7 @@ export function cleanTacoData(data: ITacoData) {
     shell: {
       name: shell.name,
       url: shell.url
-    }
+    },
+    image: data.tacoImage.urls.regular
   }
 }

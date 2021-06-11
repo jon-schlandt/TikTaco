@@ -26,6 +26,8 @@ function App() {
     )
   }
 
+  console.log(tacoDetails)
+
   return (
     <div className="App">
       <Header />
