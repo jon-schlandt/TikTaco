@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import { formatDisplayText, IShapedTacoDetails } from '../../utils/utilites'
 import './TacoDetails.css'
 
@@ -11,7 +13,10 @@ export default function TacoDetails({tacoDetails}: IProps) {
   return (
     <div className='taco-details'>
       <div className='taco-image'>
-        <button className='back-btn'></button>
+        <Link 
+          to='/'
+          className='back-btn'
+        />
         <button className='favorite-btn'></button>
         <img src={tacoDetails.image} alt={`${tacoDetails.base_layer.name} taco`} />
       </div>
