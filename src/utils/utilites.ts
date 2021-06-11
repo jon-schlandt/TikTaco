@@ -1,20 +1,48 @@
-import { ITaco } from './types'
-
-interface ITacoData {
-  base_layer: { name: string, recipe: string },
-  mixin: { name: string, recipe: string }, 
-  condiment: { name: string, recipe: string }, 
-  seasoning: { name: string, recipe: string },
-  shell: { name: string, recipe: string }
+interface ITacoDetails {
+  tacoData: ITacoData,
+  tacoImage: { urls: { regular: string}}
 }
 
-export function cleanTacoData(data: ITacoData): ITaco {
-  const { base_layer, mixin, condiment, seasoning, shell } = data
-  return {
-    base: base_layer.name,
-    mixin: mixin.name,
-    condiment: condiment.name,
-    seasoning: seasoning.name,
-    shell: shell.name
+interface IShapedTacoDetails extends ITacoData {
+  image: string
+}
+
+export interface ITacoData {
+  base_layer: IToppingData,
+  mixin: IToppingData, 
+  condiment: IToppingData, 
+  seasoning: IToppingData,
+  shell: IToppingData
+}
+
+interface IToppingData { 
+  name: string,
+  url: string
+}
+
+export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
+  const { base_layer, mixin, condiment, seasoning, shell } = data.tacoData
+  return { 
+    base_layer: {
+      name: base_layer.name,
+      url: base_layer.url
+    },
+    mixin: {
+      name: mixin.name,
+      url: mixin.url
+    },
+    condiment: {
+      name: condiment.name,
+      url: condiment.url
+    },
+    seasoning: {
+      name: seasoning.name,
+      url: seasoning.url
+    },
+    shell: {
+      name: shell.name,
+      url: shell.url
+    },
+    image: data.tacoImage.urls.regular
   }
 }
