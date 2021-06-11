@@ -11,18 +11,18 @@ import { ITacoData } from '../../utils/utilites'
 import './App.css';
 
 function App() {
-  const [taco, setTaco] = useState<ITacoData | null>(null)
+  const [tacoDetails, setTacoDetails] = useState<ITacoData | null>(null)
   const [error, setError] = useState('')
 
   const generateTaco = () => {
     getTacoData()
-      .then(data => setTaco(data))
+      .then(data => setTacoDetails(data))
       .catch(error => setError(error.message))
   }
 
-  const formatTacoText = () => {
+  const formatDisplayText = () => {
     return (
-      <p className='taco-text'>{`${taco.base_layer.name} with ${taco.condiment.name}, ganished with ${taco.mixin.name} topped off with ${taco.seasoning.name} and wrapped in a delicious ${taco.shell.name}`}</p>
+      <p className='taco-text'>{`${tacoDetails.base_layer.name} with ${tacoDetails.condiment.name}, ganished with ${tacoDetails.mixin.name} topped off with ${tacoDetails.seasoning.name} and wrapped in a delicious ${tacoDetails.shell.name}`}</p>
     )
   }
 
@@ -32,13 +32,18 @@ function App() {
       <main>
         <Route exact path='/'>
           <TacoGenerator 
-            tacoText={taco && formatTacoText()}
+            tacoText={tacoDetails && formatDisplayText()}
             error={error}
             handleClick={generateTaco}
           />
         </Route>
         <Route exact path='/details'>
-          <TacoDetails />
+          {tacoDetails &&
+            <TacoDetails 
+              displayText={formatDisplayText()}
+              tacoDetails={tacoDetails}
+            />
+          }
         </Route>
       </main>
     </div>
