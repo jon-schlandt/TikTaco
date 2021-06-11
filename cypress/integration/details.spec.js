@@ -47,32 +47,42 @@ describe('TacoDetails on render', () => {
       .contains('Baked Tilapia with Black Olives, ganished with Lettuce (Traditional; US) topped off with Mahi Mahi Rub and wrapped in a delicious Fresh Corn Tortillas')
   })
 
-  describe('Recipes list', () => {
-    it('should display each of a taco\'s toppings', () => {
-      cy.get('.recipe-list').should('be.visible')
-        .find('h1').contains('Recipes')
-        .parent().find('li').should('have.length', 5)
-      
-      cy.get('.recipe-list').find('li')
-        .eq(0).contains('Baked Tilapia')
-        .parent().next().contains('Lettuce')
-        .parent().next().contains('Black Olives')
-        .parent().next().contains('Mahi Mahi Rub')
-        .parent().next().contains('Fresh Corn Tortillas')
-    })
+  it('should display each of a taco\'s toppings', () => {
+    cy.get('.recipe-list').should('be.visible')
+      .find('h1').contains('Recipes')
+      .parent().find('li').should('have.length', 5)
+    
+    cy.get('.recipe-list').find('li')
+      .eq(0).contains('Baked Tilapia')
+      .parent().next().contains('Lettuce')
+      .parent().next().contains('Black Olives')
+      .parent().next().contains('Mahi Mahi Rub')
+      .parent().next().contains('Fresh Corn Tortillas')
+  })
 
-    it('should continue to display a taco\'s toppings upon page reload', () => {
-      cy.reload()
+  it('should continue to display a taco\'s toppings upon page reload', () => {
+    cy.reload()
 
-      cy.get('.recipe-list').should('be.visible')
-        .find('h1').contains('Recipes')
-        .parent().find('li').should('have.length', 5)
-    })
+    cy.get('.recipe-list').should('be.visible')
+      .find('h1').contains('Recipes')
+      .parent().find('li').should('have.length', 5)
+  })
 
-    it('should allow a user to view a topping\'s recipe by clicking it', () => {
-      cy.get('.recipe-list').should('be.visible')
-        .find('li > a').eq(0).click()
-        .url().should('eq', 'https://raw.githubusercontent.com/sinker/tacofancy/master/base_layers/baked_tilapia.md')
-    })
+  it('should allow a user to view a topping\'s recipe by clicking it', () => {
+    cy.get('.recipe-list').should('be.visible')
+      .find('li > a').eq(0).click()
+      .url().should('eq', 'https://raw.githubusercontent.com/sinker/tacofancy/master/base_layers/baked_tilapia.md')
+  })
+})
+
+describe('Back button', () => {
+  beforeEach('set up tests', () => {
+    cy.generateTaco()
+    cy.get('.taco-generator > a').click()
+  })
+
+  it('should navigate back to the TacoGeneration page when clicked', () => {
+    cy.get('.back-btn').should('be.visible').click()
+      .url().should('eq', 'http://localhost:3000/')  
   })
 })
