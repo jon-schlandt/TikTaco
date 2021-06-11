@@ -1,5 +1,3 @@
-import { ITaco } from './types'
-
 export interface ITacoData {
   base_layer: IToppingData,
   mixin: IToppingData, 
