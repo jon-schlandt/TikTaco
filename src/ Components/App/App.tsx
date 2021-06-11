@@ -6,21 +6,13 @@ import TacoGenerator from '../TacoGenerator/TacoGenerator'
 import TacoDetails from '../TacoDetails/TacoDetails'
 
 import { getTacoDetails } from '../../utils/apiCalls'
-import { ITacoData } from '../../utils/utilites'
+import { IShapedTacoDetails } from '../../utils/utilites'
 
 import './App.css';
-import { useEffect } from 'react'
 
 function App() {
-  const [tacoDetails, setTacoDetails] = useState<ITacoData | null>(null)
+  const [tacoDetails, setTacoDetails] = useState<IShapedTacoDetails | null>(null)
   const [error, setError] = useState('')
-
-  // useEffect(() => {
-  //   const existingDetails = JSON.parse(window.sessionStorage.getItem('tacoDetails'))
-  //   if (existingDetails) {
-  //     setTacoDetails(existingDetails)
-  //   }
-  // },[])
 
   const generateTaco = () => {
     getTacoDetails()
@@ -51,7 +43,6 @@ function App() {
         <Route exact path='/details'>
           {(tacoDetails || window.sessionStorage.getItem('tacoDetails')) &&
             <TacoDetails 
-              displayText={tacoDetails && formatDisplayText()}
               tacoDetails={
                 tacoDetails
                   ? tacoDetails

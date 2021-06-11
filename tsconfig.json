@@ -23,6 +23,7 @@
     "noImplicitAny": true
   },
   "include": [
-    "**/*.ts"
+    "**/*.ts", 
+    "src/utils/utilites.tsx"  
   ]
 }

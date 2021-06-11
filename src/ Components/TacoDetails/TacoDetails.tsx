@@ -1,14 +1,12 @@
-import { ReactNode } from 'react'
-
-import { ITacoData } from '../../utils/utilites'
+import { formatDisplayText, IShapedTacoDetails } from '../../utils/utilites'
 import './TacoDetails.css'
 
 interface IProps {
-  displayText: ReactNode,
-  tacoDetails: ITacoData
+  tacoDetails: IShapedTacoDetails
 }
 
-export default function TacoDetails({displayText, tacoDetails}: IProps) {
+export default function TacoDetails({tacoDetails}: IProps) {
+  console.log(formatDisplayText(tacoDetails))
   return (
     <div></div>
   )
