@@ -9,14 +9,25 @@ import { getTacoDetails } from '../../utils/apiCalls'
 import { ITacoData } from '../../utils/utilites'
 
 import './App.css';
+import { useEffect } from 'react'
 
 function App() {
   const [tacoDetails, setTacoDetails] = useState<ITacoData | null>(null)
   const [error, setError] = useState('')
 
+  // useEffect(() => {
+  //   const existingDetails = JSON.parse(window.sessionStorage.getItem('tacoDetails'))
+  //   if (existingDetails) {
+  //     setTacoDetails(existingDetails)
+  //   }
+  // },[])
+
   const generateTaco = () => {
     getTacoDetails()
-      .then(data => setTacoDetails(data))
+      .then(data => {
+        window.sessionStorage.setItem('tacoDetails', JSON.stringify(data))
+        setTacoDetails(data)
+      })
       .catch(error => setError(error.message))
   }
 
@@ -25,8 +36,6 @@ function App() {
       <p className='taco-text'>{`${tacoDetails.base_layer.name} with ${tacoDetails.condiment.name}, ganished with ${tacoDetails.mixin.name} topped off with ${tacoDetails.seasoning.name} and wrapped in a delicious ${tacoDetails.shell.name}`}</p>
     )
   }
-
-  console.log(tacoDetails)
 
   return (
     <div className="App">
@@ -40,10 +49,14 @@ function App() {
           />
         </Route>
         <Route exact path='/details'>
-          {tacoDetails &&
+          {(tacoDetails || window.sessionStorage.getItem('tacoDetails')) &&
             <TacoDetails 
-              displayText={formatDisplayText()}
-              tacoDetails={tacoDetails}
+              displayText={tacoDetails && formatDisplayText()}
+              tacoDetails={
+                tacoDetails
+                  ? tacoDetails
+                  : JSON.parse(window.sessionStorage.getItem('tacoDetails'))
+              }
             />
           }
         </Route>
