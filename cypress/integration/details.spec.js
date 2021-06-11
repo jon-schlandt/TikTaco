@@ -28,4 +28,22 @@ describe('TacoDetails on render', () => {
     cy.get('.display-text').should('be.visible')
       .contains('Baked Tilapia with Black Olives, ganished with Lettuce (Traditional; US) topped off with Mahi Mahi Rub and wrapped in a delicious Fresh Corn Tortillas')
   })
+
+  describe('Recipes list', () => {
+    it('should render each of a taco\'s toppings', () => {
+      cy.get('.recipe-list').should('be.visible')
+        .find('li').should('have.length', 5)
+      
+      cy.get('.recipe-list').find('li')
+        .eq(0).contains('Baked Tilapia')
+        .parent().next().contains('Lettuce')
+        .parent().next().contains('Black Olives')
+        .parent().next().contains('Mahi Mahi Rub')
+        .parent().next().contains('Fresh Corn Tortillas')
+    })
+  })
+  
+  // it('should render each topping within a \'Recipes\' list, each topping should link to its recipe', () => {
+  //   cy.get('')
+  // })
 })
