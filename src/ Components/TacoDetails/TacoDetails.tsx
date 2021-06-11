@@ -11,7 +11,7 @@ export default function TacoDetails({tacoDetails}: IProps) {
   return (
     <div className='taco-details'>
       <div className='taco-image'>
-        <img src={tacoDetails.image} alt='image of taco' />
+        <img src={tacoDetails.image} alt={`${tacoDetails.base_layer.name} taco`} />
       </div>
       {displayText}
       <ul className='recipe-list'>
