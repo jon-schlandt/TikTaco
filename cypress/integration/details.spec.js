@@ -24,7 +24,25 @@ describe('TacoDetails on render', () => {
       })
   })
 
+  it('should continue to display a taco\'s image upon page reload', () => {
+    cy.reload()
+
+    cy.fixture('../fixtures/taco-image.json')
+      .then(image => {
+        cy.get('.taco-image > img').should('be.visible')
+          .should('have.attr', 'src', image.urls.regular)
+          .should('have.attr', 'alt', 'Baked Tilapia taco')
+      })
+  })
+
   it('should render display text for a taco', () => {
+    cy.get('.display-text').should('be.visible')
+      .contains('Baked Tilapia with Black Olives, ganished with Lettuce (Traditional; US) topped off with Mahi Mahi Rub and wrapped in a delicious Fresh Corn Tortillas')
+  })
+
+  it('should continue to display a taco\'s display text upon page reload', () => {
+    cy.reload() 
+
     cy.get('.display-text').should('be.visible')
       .contains('Baked Tilapia with Black Olives, ganished with Lettuce (Traditional; US) topped off with Mahi Mahi Rub and wrapped in a delicious Fresh Corn Tortillas')
   })
@@ -51,7 +69,7 @@ describe('TacoDetails on render', () => {
         .parent().find('li').should('have.length', 5)
     })
 
-    it('should allow a user to view a topping\'s recipe by selecting it', () => {
+    it('should allow a user to view a topping\'s recipe by clicking it', () => {
       cy.get('.recipe-list').should('be.visible')
         .find('li > a').eq(0).click()
         .url().should('eq', 'https://raw.githubusercontent.com/sinker/tacofancy/master/base_layers/baked_tilapia.md')
