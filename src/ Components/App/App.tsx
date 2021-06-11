@@ -12,6 +12,7 @@ import './App.css';
 
 function App() {
   const [tacoDetails, setTacoDetails] = useState<IShapedTacoDetails | null>(null)
+  const [favorites, setFavorites] = useState<IShapedTacoDetails[]>([])
   const [error, setError] = useState('')
 
   const generateTaco = () => {
@@ -21,6 +22,10 @@ function App() {
         setTacoDetails(data)
       })
       .catch(error => setError(error.message))
+  }
+
+  const toggleFavorite = () => {
+
   }
 
   return (
@@ -42,6 +47,7 @@ function App() {
                   ? tacoDetails
                   : JSON.parse(window.sessionStorage.getItem('tacoDetails'))
               }
+              handleClick={toggleFavorite}
             />
           }
         </Route>

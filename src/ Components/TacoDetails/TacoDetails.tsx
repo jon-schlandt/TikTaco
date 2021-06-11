@@ -4,7 +4,8 @@ import { formatDisplayText, IShapedTacoDetails } from '../../utils/utilites'
 import './TacoDetails.css'
 
 interface IProps {
-  tacoDetails: IShapedTacoDetails
+  tacoDetails: IShapedTacoDetails,
+  handleClick: () => void
 }
 
 export default function TacoDetails({tacoDetails}: IProps) {
