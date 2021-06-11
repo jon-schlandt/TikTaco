@@ -11,6 +11,8 @@ export default function TacoDetails({tacoDetails}: IProps) {
   return (
     <div className='taco-details'>
       <div className='taco-image'>
+        <button className='back-btn'></button>
+        <button className='favorite-btn'></button>
         <img src={tacoDetails.image} alt={`${tacoDetails.base_layer.name} taco`} />
       </div>
       {displayText}
