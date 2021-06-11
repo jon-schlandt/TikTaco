@@ -30,9 +30,10 @@ describe('TacoDetails on render', () => {
   })
 
   describe('Recipes list', () => {
-    it('should render each of a taco\'s toppings', () => {
+    it('should display each of a taco\'s toppings', () => {
       cy.get('.recipe-list').should('be.visible')
-        .find('li').should('have.length', 5)
+        .find('h1').contains('Recipes')
+        .parent().find('li').should('have.length', 5)
       
       cy.get('.recipe-list').find('li')
         .eq(0).contains('Baked Tilapia')
@@ -41,9 +42,19 @@ describe('TacoDetails on render', () => {
         .parent().next().contains('Mahi Mahi Rub')
         .parent().next().contains('Fresh Corn Tortillas')
     })
+
+    it('should continue to display a taco\'s toppings upon page reload', () => {
+      cy.reload()
+
+      cy.get('.recipe-list').should('be.visible')
+        .find('h1').contains('Recipes')
+        .parent().find('li').should('have.length', 5)
+    })
+
+    it('should allow a user to view a topping\'s recipe by selecting it', () => {
+      cy.get('.recipe-list').should('be.visible')
+        .find('li > a').eq(0).click()
+        .url().should('eq', 'https://raw.githubusercontent.com/sinker/tacofancy/master/base_layers/baked_tilapia.md')
+    })
   })
-  
-  // it('should render each topping within a \'Recipes\' list, each topping should link to its recipe', () => {
-  //   cy.get('')
-  // })
 })
