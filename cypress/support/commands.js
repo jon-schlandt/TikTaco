@@ -26,11 +26,21 @@ export {}
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('setTacoIntercept', () => {
-  cy.fixture('../fixtures/taco.json')
-    .then(taco => cy.intercept('http://taco-randomizer.herokuapp.com/random/', taco))
+Cypress.Commands.add('setTacoIntercepts', () => {
+  cy.fixture('../fixtures/taco-data.json')
+    .then(data => cy.intercept('http://taco-randomizer.herokuapp.com/random/', data))
+
+  cy.fixture('../fixtures/taco-image.json')
+    .then(image => cy.intercept('https://api.unsplash.com/photos/random?query=taco', image))
 })
 
 Cypress.Commands.add('setErrorIntercept', (statusCode) => {
   cy.intercept('http://taco-randomizer.herokuapp.com/random/', {statusCode})
+})
+
+Cypress.Commands.add('generateTaco', () => {
+  cy.setTacoIntercepts()
+  cy.visit('http://localhost:3000')
+
+  cy.get('.primary-btn').click()
 })
