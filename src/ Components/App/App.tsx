@@ -5,7 +5,7 @@ import Header from '../Header/Header'
 import TacoGenerator from '../TacoGenerator/TacoGenerator'
 import TacoDetails from '../TacoDetails/TacoDetails'
 
-import { getTacoData } from '../../utils/apiCalls'
+import { getTacoDetails } from '../../utils/apiCalls'
 import { ITacoData } from '../../utils/utilites'
 
 import './App.css';
@@ -15,7 +15,7 @@ function App() {
   const [error, setError] = useState('')
 
   const generateTaco = () => {
-    getTacoData()
+    getTacoDetails()
       .then(data => setTacoDetails(data))
       .catch(error => setError(error.message))
   }

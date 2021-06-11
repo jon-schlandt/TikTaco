@@ -2,12 +2,23 @@ import { cleanTacoData } from './utilites'
 
 // ***** ----- Data fetching ----- ***** //
 
-export function getTacoData() {
+export async function getTacoDetails() {
+  const tacoData = await getTacoData();
+  const tacoImage = await getTacoImage();
+}
+
+function getTacoData() {
   return fetch('http://taco-randomizer.herokuapp.com/random/')
     .then(resp => {
       return checkResponse(resp)
     })
-    .then(data => cleanTacoData(data))
+}
+
+function getTacoImage() {
+  return fetch('https://api.unsplash.com/photos/random?query=taco', {headers: { Authorization: 'Client-ID SVh3qN5qzhFdLisOJQj9vdBuBYOFNI6FNPrWcweQsZM' }})
+    .then(resp => {
+      return checkResponse(resp)
+    })
 }
 
 // ***** ----- Error handling ----- ***** //
