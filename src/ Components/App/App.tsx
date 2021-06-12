@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom'
 import Header from '../Header/Header'
 import TacoGenerator from '../TacoGenerator/TacoGenerator'
 import TacoDetails from '../TacoDetails/TacoDetails'
-import ToShare from '../ToShare/ToShare'
+import Favorites from '../ToShare/Favorites'
 
 import { getTacoDetails } from '../../utils/apiCalls'
 import { IShapedTacoDetails } from '../../utils/utilites'
@@ -53,31 +53,35 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <main>
         <Route exact path='/'>
-          <TacoGenerator 
-            tacoDetails={tacoDetails}
-            error={error}
-            handleClick={generateTaco}
-          />
+          <main>
+            <TacoGenerator 
+              tacoDetails={tacoDetails}
+              error={error}
+              handleClick={generateTaco}
+            />
+          </main>
         </Route>
         <Route 
           exact path='/details/:id'
           render={({ match }) => {
             return (
               generatedTacos &&
-                <TacoDetails 
-                  tacoDetails={generatedTacos.find(taco => taco.id === match.params.id)}
-                  handleClick={toggleFavorite}
-                />
+                <main>
+                  <TacoDetails 
+                    tacoDetails={generatedTacos.find(taco => taco.id === match.params.id)}
+                    handleClick={toggleFavorite}
+                  />
+                </main>
             )
           }}
         >
         </Route>
         <Route exact path='/to-share'>
-          <ToShare favorites={getFavorites()}/>
+          <main>
+            <Favorites favorites={getFavorites()} />
+          </main>
         </Route>
-      </main>
     </div>
   );
 }
