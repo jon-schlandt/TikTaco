@@ -4,10 +4,11 @@ import { formatDisplayText, IShapedTacoDetails } from '../../utils/utilites'
 import './TacoDetails.css'
 
 interface IProps {
-  tacoDetails: IShapedTacoDetails
+  tacoDetails: IShapedTacoDetails,
+  handleClick: (tacoDetails: IShapedTacoDetails) => void
 }
 
-export default function TacoDetails({tacoDetails}: IProps) {
+export default function TacoDetails({tacoDetails, handleClick}: IProps) {
   const displayText = formatDisplayText(tacoDetails)
 
   return (
@@ -17,7 +18,10 @@ export default function TacoDetails({tacoDetails}: IProps) {
           to='/'
           className='back-btn'
         />
-        <button className='favorite-btn'></button>
+        <button 
+          className='favorite-btn'
+          onClick={() => handleClick(tacoDetails)}
+        ></button>
         <img src={tacoDetails.image} alt={`${tacoDetails.base_layer.name} taco`} />
       </div>
       {displayText}
