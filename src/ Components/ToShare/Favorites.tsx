@@ -18,7 +18,7 @@ export default function Favorites({favorites}: {favorites: IShapedTacoDetails[]}
 
   return (
     <div className='no-share'>
-      <h1 className='to-share-title'>Tacos to Share</h1>
+      <h1 className='to-share-title'>Favorites</h1>
       {favoriteDisplays}
     </div>
   )

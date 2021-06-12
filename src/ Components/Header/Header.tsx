@@ -6,7 +6,9 @@ import favoritesBtn from './favorites_btn.svg'
 export default function Header() {
   return (
     <header>
-      <h1 className='app-title'>TikTaco</h1>
+      <Link to='/'>
+        <h1 className='app-title'>TikTaco</h1>
+      </Link>
       <Link
         to='/favorites'
       >

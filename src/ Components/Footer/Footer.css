@@ -10,7 +10,13 @@ footer {
   z-index: 1;
 }
 
-footer > button {
+footer a {
+  margin-right: 16px;
+  text-decoration: unset;
+  color:rgb(0, 0, 0);
+}
+
+footer .back-btn {
   background: unset;
   border: unset;
   font-size: 1em;
