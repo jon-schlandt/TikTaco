@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom'
 import Header from '../Header/Header'
 import TacoGenerator from '../TacoGenerator/TacoGenerator'
 import TacoDetails from '../TacoDetails/TacoDetails'
+import ToShare from '../ToShare/ToShare'
 
 import { getTacoDetails } from '../../utils/apiCalls'
 import { IShapedTacoDetails } from '../../utils/utilites'
@@ -56,6 +57,9 @@ function App() {
               handleClick={toggleFavorite}
             />
           }
+        </Route>
+        <Route exact path='/to-share'>
+          <ToShare favorites={favorites}/>
         </Route>
       </main>
     </div>
