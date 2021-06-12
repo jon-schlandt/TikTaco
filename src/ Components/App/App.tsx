@@ -14,7 +14,6 @@ import './App.css';
 function App() {
   const [tacoDetails, setTacoDetails] = useState<IShapedTacoDetails | null>(null)
   const [generatedTacos, setGeneratedTacos] = useState<IShapedTacoDetails[]>([])
-  const [favorites, setFavorites] = useState<IShapedTacoDetails[]>([])
   const [error, setError] = useState('')
 
   const generateTaco = () => {
@@ -29,13 +28,21 @@ function App() {
   }
 
   const toggleFavorite = (tacoDetails: IShapedTacoDetails) => {
-    const foundFavorite = favorites.find(taco => taco.id === tacoDetails.id)
+    setGeneratedTacos(
+      generatedTacos.map(taco => {
+        if (taco.id === tacoDetails.id) {
+          taco.isFavorited = !(taco.isFavorited)
+        }
 
-    if (foundFavorite) {
-      setFavorites(favorites.filter(taco => taco.id !== tacoDetails.id))
-    } else {
-      setFavorites([...favorites, tacoDetails])
-    }
+        return taco
+      })
+    )
+  }
+
+  console.log(generatedTacos)
+
+  const getFavorites = () => {
+    return generatedTacos.filter(taco => taco.isFavorited)
   }
 
   return (
@@ -62,7 +69,7 @@ function App() {
           }
         </Route>
         <Route exact path='/to-share'>
-          <ToShare favorites={favorites}/>
+          <ToShare favorites={getFavorites()}/>
         </Route>
       </main>
     </div>
