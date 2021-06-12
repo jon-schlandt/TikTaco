@@ -13,6 +13,7 @@ import './App.css';
 
 function App() {
   const [tacoDetails, setTacoDetails] = useState<IShapedTacoDetails | null>(null)
+  const [generatedTacos, setGeneratedTacos] = useState<IShapedTacoDetails[]>([])
   const [favorites, setFavorites] = useState<IShapedTacoDetails[]>([])
   const [error, setError] = useState('')
 
@@ -20,7 +21,9 @@ function App() {
     getTacoDetails()
       .then(data => {
         window.sessionStorage.setItem('tacoDetails', JSON.stringify(data))
+
         setTacoDetails(data)
+        setGeneratedTacos([...generatedTacos, data])
       })
       .catch(error => setError(error.message))
   }
