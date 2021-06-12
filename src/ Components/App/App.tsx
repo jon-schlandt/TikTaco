@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Route } from 'react-router-dom'
 
 import Header from '../Header/Header'
@@ -8,9 +8,7 @@ import ToShare from '../ToShare/ToShare'
 
 import { getTacoDetails } from '../../utils/apiCalls'
 import { IShapedTacoDetails } from '../../utils/utilites'
-
 import './App.css';
-import { useEffect } from 'react'
 
 function App() {
   const [tacoDetails, setTacoDetails] = useState<IShapedTacoDetails | null>(null)
@@ -63,17 +61,18 @@ function App() {
             handleClick={generateTaco}
           />
         </Route>
-        <Route exact path='/details'>
-          {(tacoDetails || window.sessionStorage.getItem('tacoDetails')) &&
-            <TacoDetails 
-              tacoDetails={
-                tacoDetails
-                  ? tacoDetails
-                  : JSON.parse(window.sessionStorage.getItem('tacoDetails'))
-              }
-              handleClick={toggleFavorite}
-            />
-          }
+        <Route 
+          exact path='/details/:id'
+          render={({ match }) => {
+            return (
+              generatedTacos &&
+                <TacoDetails 
+                  tacoDetails={generatedTacos.find(taco => taco.id === match.params.id)}
+                  handleClick={toggleFavorite}
+                />
+            )
+          }}
+        >
         </Route>
         <Route exact path='/to-share'>
           <ToShare favorites={getFavorites()}/>
