@@ -25,7 +25,13 @@ function App() {
   }
 
   const toggleFavorite = (tacoDetails: IShapedTacoDetails) => {
-    console.log(tacoDetails)
+    const foundFavorite = favorites.find(taco => taco.id === tacoDetails.id)
+
+    if (foundFavorite) {
+      setFavorites(favorites.filter(taco => taco.id !== tacoDetails.id))
+    } else {
+      setFavorites([...favorites, tacoDetails])
+    }
   }
 
   return (
