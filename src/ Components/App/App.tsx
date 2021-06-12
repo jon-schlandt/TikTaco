@@ -10,17 +10,22 @@ import { getTacoDetails } from '../../utils/apiCalls'
 import { IShapedTacoDetails } from '../../utils/utilites'
 
 import './App.css';
+import { useEffect } from 'react'
 
 function App() {
   const [tacoDetails, setTacoDetails] = useState<IShapedTacoDetails | null>(null)
-  const [generatedTacos, setGeneratedTacos] = useState<IShapedTacoDetails[]>([])
+  const [generatedTacos, setGeneratedTacos] = useState<IShapedTacoDetails[]>(() => {
+    if (window.sessionStorage.getItem('generatedTacos')) {
+      return JSON.parse(window.sessionStorage.getItem('generatedTacos'))
+    } else {
+      return []
+    }
+  })
   const [error, setError] = useState('')
 
   const generateTaco = () => {
     getTacoDetails()
       .then(data => {
-        window.sessionStorage.setItem('tacoDetails', JSON.stringify(data))
-
         setTacoDetails(data)
         setGeneratedTacos([...generatedTacos, data])
       })
@@ -39,11 +44,13 @@ function App() {
     )
   }
 
-  console.log(generatedTacos)
-
   const getFavorites = () => {
     return generatedTacos.filter(taco => taco.isFavorited)
   }
+
+  useEffect(() => {
+    window.sessionStorage.setItem('generatedTacos', JSON.stringify(generatedTacos))
+  })
 
   return (
     <div className="App">
