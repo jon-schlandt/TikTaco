@@ -1,0 +1,18 @@
+footer {
+  background-color: white;
+  grid-row: 3;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: solid 1px rgb(0, 0, 0);
+  z-index: 1;
+}
+
+footer > button {
+  background: unset;
+  border: unset;
+  font-size: 1em;
+  cursor: pointer;
+}

@@ -8,7 +8,7 @@ export default function Header() {
     <header>
       <h1 className='app-title'>TikTaco</h1>
       <Link
-        to='/to-share'
+        to='/favorites'
       >
         <img className='favorites-btn'src={favoritesBtn} alt='favorite button'/>
       </Link>

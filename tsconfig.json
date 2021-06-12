@@ -24,6 +24,7 @@
   },
   "include": [
     "**/*.ts", 
-    "src/utils/utilites.tsx"  
+    "src/utils/utilites.tsx",
+    "src/custom.d.ts"  
   ]
 }
