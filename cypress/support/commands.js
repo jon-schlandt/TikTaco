@@ -44,3 +44,11 @@ Cypress.Commands.add('generateTaco', () => {
 
   cy.get('.primary-btn').click()
 })
+
+Cypress.Commands.add('generateAndFavoriteTaco', () => {
+  cy.generateTaco()
+
+  cy.get('.taco-generator > a').click()
+  cy.get('.favorite-btn').click()
+  cy.get('.view-favorites').click()
+})

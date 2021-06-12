@@ -11,10 +11,10 @@ header {
   z-index: 1;
 }
 
-.app-title {
+.app-title > h1 {
   font-size: 1.25em;
 }
 
-.favorites-btn {
+.view-favorites {
   width: 32px;
 }

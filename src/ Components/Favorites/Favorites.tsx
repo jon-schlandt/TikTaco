@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import { formatDisplayText, IShapedTacoDetails } from "../../utils/utilites"
-import './ToShare.css'
+import './Favorites.css'
 
 export default function Favorites({favorites}: {favorites: IShapedTacoDetails[]}) {
   const favoriteDisplays = favorites.map(favorite => {
@@ -17,9 +17,12 @@ export default function Favorites({favorites}: {favorites: IShapedTacoDetails[]}
   })
 
   return (
-    <div className='no-share'>
-      <h1 className='to-share-title'>Favorites</h1>
-      {favoriteDisplays}
+    <div className='favorites'>
+      <h1 className='favorites-title'>Favorites</h1>
+      {favoriteDisplays.length
+        ? favoriteDisplays
+        : <p className='no-favorites-msg'>No favorites added yet.</p>
+      }
     </div>
   )
 }
