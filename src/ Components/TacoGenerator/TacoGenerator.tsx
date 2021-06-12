@@ -31,7 +31,7 @@ export default function TacoGenerator({tacoDetails, error, handleClick}: IProps)
       }
       {tacoDetails &&
         <>
-          <Link to='/details'>
+          <Link to={`/details/${tacoDetails.id}`}>
             <PrimaryButton 
               text='View Details'
             />

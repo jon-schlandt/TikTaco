@@ -7,7 +7,8 @@ interface ITacoDetails {
 
 export interface IShapedTacoDetails extends ITacoData {
   id: string,
-  image: string
+  image: string,
+  isFavorited: boolean
 }
 
 export interface ITacoData {
@@ -49,7 +50,8 @@ export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
       name: shell.name,
       url: shell.url
     },
-    image: data.tacoImage.urls.regular
+    image: data.tacoImage.urls.regular,
+    isFavorited: false
   }
 }
 
