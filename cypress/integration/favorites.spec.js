@@ -13,7 +13,7 @@ describe('Favorites button', () => {
   })
 })
 
-describe('Favorites on render', () => {
+describe('Favorites view on render', () => {
   it('should display an informative message if no tacos have been favorited', () => {
     cy.visit('http://localhost:3000/')
     cy.get('.view-favorites').click()
@@ -28,6 +28,18 @@ describe('Favorites on render', () => {
 
     cy.get('.display-text').should('be.visible')
       .contains('Baked Tilapia with Black Olives, ganished with Lettuce (Traditional; US) topped off with Mahi Mahi Rub and wrapped in a delicious Fresh Corn Tortillas')
+  })
+
+  it('should continue to display a taco if it has been favorited and the page is reloaded', () => {
+    cy.generateAndFavoriteTaco()
+    cy.reload()
+
+    cy.get('.display-text').should('be.visible')
+      .contains('Baked Tilapia with Black Olives, ganished with Lettuce (Traditional; US) topped off with Mahi Mahi Rub and wrapped in a delicious Fresh Corn Tortillas')
+  })
+
+  describe('Favorited taco on Favorites view', () => {
+
   })
 
   afterEach('clear session storage', () => {
