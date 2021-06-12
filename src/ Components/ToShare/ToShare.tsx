@@ -7,7 +7,7 @@ export default function ToShare({favorites}: {favorites: IShapedTacoDetails[]}) 
   const favoriteDisplays = favorites.map(favorite => {
     return (
       <Link
-        to={`to-share${favorite.id}`} 
+        to={`details/${favorite.id}`} 
         key={favorite.id}
         className='favorite-display'
       >
