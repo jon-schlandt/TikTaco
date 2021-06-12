@@ -24,7 +24,7 @@ describe('TacoGenerator on first render', () => {
 
 describe('Generate Taco button', () => {
   beforeEach('set up tests', () => {
-    cy.setTacoIntercept()
+    cy.setTacoIntercepts()
     cy.visit('http://localhost:3000')
     cy.get('.primary-btn').click()
   })
@@ -40,7 +40,7 @@ describe('Generate Taco button', () => {
   })
 
   it('should render a secondary \'Generate another?\' button directly below it when clicked', () => {
-    cy.get('.primary-btn').next('button')
+    cy.get('.primary-btn').parent().next('button')
       .should('be.visible')
       .should('have.class', 'secondary-btn')
       .contains('Generate another?')

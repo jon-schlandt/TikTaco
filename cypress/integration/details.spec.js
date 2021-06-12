@@ -5,7 +5,7 @@ describe('\'View Details\' button', () => {
 
   it('should render the TacoDetails page when clicked', () => {
     cy.get('.taco-generator > a').click()
-      .url().should('eq', 'http://localhost:3000/details')
+      .url().should('eq', 'http://localhost:3000/details/LBBFM')
   })
 })
 
