@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom'
 import Header from '../Header/Header'
 import TacoGenerator from '../TacoGenerator/TacoGenerator'
 import TacoDetails from '../TacoDetails/TacoDetails'
-import Favorites from '../ToShare/Favorites'
+import Favorites from '../Favorites/Favorites'
 import Footer from '../Footer/Footer'
 
 import { getTacoDetails } from '../../utils/apiCalls'
