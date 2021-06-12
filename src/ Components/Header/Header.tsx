@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import './Header.css'
 import favoritesBtn from './favorites_btn.svg'
 
@@ -5,7 +7,11 @@ export default function Header() {
   return (
     <header>
       <h1 className='app-title'>TikTaco</h1>
-      <img className='favorites-btn'src={favoritesBtn} alt='favorite button'/>
+      <Link
+        to='/to-share'
+      >
+        <img className='favorites-btn'src={favoritesBtn} alt='favorite button'/>
+      </Link>
     </header>
   )
 }
