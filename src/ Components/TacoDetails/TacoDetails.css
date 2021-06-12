@@ -16,7 +16,6 @@
   object-position: center;
 }
 
-.back-btn,
 .favorite-btn {
   background-color: unset;
   width: 32px;
@@ -24,14 +23,6 @@
   position: absolute;
   border: unset;
   cursor: pointer;
-}
-
-.back-btn {
-  background-image: url('./back_btn.svg');
-  background-position: center;
-  background-size: cover;
-  top: 8px;
-  left: 8px;
 }
 
 .favorite-btn {

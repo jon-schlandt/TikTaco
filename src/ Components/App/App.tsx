@@ -4,7 +4,8 @@ import { Route } from 'react-router-dom'
 import Header from '../Header/Header'
 import TacoGenerator from '../TacoGenerator/TacoGenerator'
 import TacoDetails from '../TacoDetails/TacoDetails'
-import ToShare from '../ToShare/ToShare'
+import Favorites from '../ToShare/Favorites'
+import Footer from '../Footer/Footer'
 
 import { getTacoDetails } from '../../utils/apiCalls'
 import { IShapedTacoDetails } from '../../utils/utilites'
@@ -53,31 +54,53 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <main>
         <Route exact path='/'>
-          <TacoGenerator 
-            tacoDetails={tacoDetails}
-            error={error}
-            handleClick={generateTaco}
-          />
+          <main>
+            <TacoGenerator 
+              tacoDetails={tacoDetails}
+              error={error}
+              handleClick={generateTaco}
+            />
+          </main>
+          <Footer isHome={true} />
         </Route>
         <Route 
           exact path='/details/:id'
-          render={({ match }) => {
+          render={({ match, history }) => {
             return (
               generatedTacos &&
-                <TacoDetails 
-                  tacoDetails={generatedTacos.find(taco => taco.id === match.params.id)}
-                  handleClick={toggleFavorite}
-                />
+                <>
+                  <main>
+                    <TacoDetails 
+                      tacoDetails={generatedTacos.find(taco => taco.id === match.params.id)}
+                      handleClick={toggleFavorite}
+                    />
+                  </main>
+                  <Footer 
+                    isHome={false}
+                    handleClick={history.goBack}
+                  />
+                </>
             )
           }}
         >
         </Route>
-        <Route exact path='/to-share'>
-          <ToShare favorites={getFavorites()}/>
-        </Route>
-      </main>
+        <Route 
+          exact path='/favorites'
+          render={({ history }) => {
+            return (
+              <>
+                <main>
+                  <Favorites favorites={getFavorites()} />
+                </main>
+                <Footer 
+                  isHome={false}
+                  handleClick={history.goBack}
+                />
+              </>
+            )
+          }}
+        />
     </div>
   );
 }

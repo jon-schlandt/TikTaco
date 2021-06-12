@@ -14,10 +14,6 @@ export default function TacoDetails({tacoDetails, handleClick}: IProps) {
   return (
     <div className='taco-details'>
       <div className='taco-image'>
-        <Link 
-          to='/'
-          className='back-btn'
-        />
         <button 
           className='favorite-btn'
           onClick={() => handleClick(tacoDetails)}

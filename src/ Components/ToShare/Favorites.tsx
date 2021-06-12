@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { formatDisplayText, IShapedTacoDetails } from "../../utils/utilites"
 import './ToShare.css'
 
-export default function ToShare({favorites}: {favorites: IShapedTacoDetails[]}) {
+export default function Favorites({favorites}: {favorites: IShapedTacoDetails[]}) {
   const favoriteDisplays = favorites.map(favorite => {
     return (
       <Link
@@ -18,7 +18,7 @@ export default function ToShare({favorites}: {favorites: IShapedTacoDetails[]}) 
 
   return (
     <div className='no-share'>
-      <h1 className='to-share-title'>Tacos to Share</h1>
+      <h1 className='to-share-title'>Favorites</h1>
       {favoriteDisplays}
     </div>
   )
