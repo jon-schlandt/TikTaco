@@ -22,9 +22,13 @@
 .taco-display > div {
   min-height: 128px;
   /* border: solid 1px rgb(0, 0, 0); */
+  border-top: solid 1px rgba(0, 0, 0, .15);
+  border-bottom: solid 1px rgba(0, 0, 0, .15); 
+  /* border-top: solid 2px #FE2C55;
+  border-bottom: solid 2px #FE2C55; */
   padding: 16px;
-  border-radius: 8px;
-  box-shadow: inset 0 0 12px rgb(0, 0, 0, .25);
+  /* border-radius: 8px; */
+  /* box-shadow: inset 0 0 6px rgb(0, 0, 0, .2); */
 }
 
 .generation-msg,

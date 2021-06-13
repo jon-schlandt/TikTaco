@@ -1,12 +1,13 @@
 footer {
-  background-color: white;
+  background: radial-gradient(rgb(245, 245, 245) 0%, rgb(240, 240, 240) 100%);
   grid-row: 3;
   position: sticky;
   bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: solid 1px rgb(0, 0, 0);
+  /* border-top: solid 1px rgb(0, 0, 0); */
+  /* box-shadow: 0 1px 4px rgb(0, 0, 0, .75); */
   z-index: 1;
 }
 
