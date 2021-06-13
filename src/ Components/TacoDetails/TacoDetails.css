@@ -93,3 +93,15 @@ main.details {
   text-decoration: unset;
   color: inherit;
 }
+
+@media only screen and (min-width: 460px) {
+  .taco-image {
+    height: 256px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .taco-image {
+    height: 376px;
+  }
+}
