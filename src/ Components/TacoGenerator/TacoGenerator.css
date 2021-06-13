@@ -1,16 +1,20 @@
 .taco-generator {
+  height: 100%;
   max-width: 900px;
+  position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin: 0 auto;
 }
 
 .greeting {
-  font-size: 1.25em;
+  position: sticky;
   margin-bottom: 16px;
+  font-size: 1.25em;
 }
 
-.taco-display {
+.taco-display > div {
   margin-bottom: 16px;
   border: solid 1px rgb(0, 0, 0);
   border-radius: 8px;
@@ -22,11 +26,10 @@
   font-size: 1.25em;
 }
 
-/* .generation-msg {
-  margin-bottom: 48px;
-} */
-
-.taco-generator > button,
-.taco-generator > a {
-  align-self: center;
+.generator-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: unset;
 }
