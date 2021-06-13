@@ -1,6 +1,6 @@
 header {
   /* background-color: white; */
-  background: radial-gradient(rgb(245, 245, 245) 0%, rgb(240, 240, 240) 100%);
+  background: radial-gradient(rgb(255, 255, 255) 0%, rgb(245, 245, 245) 100%);
   grid-row: 1;
   position: sticky;
   top: 0;
@@ -9,7 +9,7 @@ header {
   align-items: center;
   padding: 0 16px;
   /* border-bottom: solid 1px rgba(0, 0, 0, .2); */
-  /* box-shadow: 0 -1px 4px rgb(0, 0, 0, .75); */
+  box-shadow: 0 -1px 8px rgb(0, 0, 0, .25);
   z-index: 1;
 }
 

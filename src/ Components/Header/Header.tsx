@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import './Header.css'
-import favoritesBtn from './favorites_btn.svg'
+import favoritesBtn from './view_favorites.svg'
 
 export default function Header() {
   return (
