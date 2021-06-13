@@ -15,33 +15,37 @@ interface IProps {
 export default function TacoGenerator({tacoDetails, error, handleClick}: IProps) {
   return (
     <div className='taco-generator'>
-      <h1 className='greeting'>Good toppings!</h1>
       <div className='taco-display'>
-        {error && <p>{error}</p>}
-        {!tacoDetails
-          ? !error && <p className='generation-msg'>Select the button below to generate a random taco.</p>
-          : formatDisplayText(tacoDetails)
-        }
+        <h1 className='greeting'>Good toppings!</h1>
+        <div>
+          {error && <p>{error}</p>}
+          {!tacoDetails
+            ? !error && <p className='generation-msg'>Select the button below to generate a random taco.</p>
+            : formatDisplayText(tacoDetails)
+          }
+        </div>
       </div>
-      {!tacoDetails &&
-        <PrimaryButton
-          text='Generate Taco'
-          handleClick={handleClick}
-        />
-      }
-      {tacoDetails &&
-        <>
-          <Link to={`/details/${tacoDetails.id}`}>
-            <PrimaryButton 
-              text='View Details'
-            />
-          </Link>
-          <SecondaryButton 
-            text='Generate another?'
+      <fieldset className='generator-btns'>
+        {!tacoDetails &&
+          <PrimaryButton
+            text='Generate Taco'
             handleClick={handleClick}
           />
-        </>
-      }
+        }
+        {tacoDetails &&
+          <>
+            <Link to={`/details/${tacoDetails.id}`}>
+              <PrimaryButton 
+                text='View Details'
+              />
+            </Link>
+            <SecondaryButton 
+              text='Generate another?'
+              handleClick={handleClick}
+            />
+          </>
+        }
+      </fieldset>
     </div>
   )
 }

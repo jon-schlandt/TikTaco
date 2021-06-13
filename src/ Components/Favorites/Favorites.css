@@ -1,3 +1,8 @@
+.favorites {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .favorites-title {
   margin-bottom: 16px;
   font-size: 1.25em;
@@ -6,4 +11,9 @@
 .favorite-display {
   text-decoration: unset;
   color: inherit;
+}
+
+.favorite-display > .display-text {
+  margin: unset;
+  margin-bottom: 16px;
 }

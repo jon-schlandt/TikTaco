@@ -1,10 +1,10 @@
 .App {
   height: 100%;
   display: grid;
-  grid-template-rows: 3.5rem auto 3.5rem;
+  grid-template-rows: 3.5rem auto 3.25rem;
 }
 
 main {
   grid-row: 2;
-  padding: 16px;
+  padding: 24px 16px;
 }

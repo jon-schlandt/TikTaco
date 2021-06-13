@@ -1,9 +1,12 @@
 .primary-btn {
-  background: unset;
+  background: #FE2C55;
   margin-bottom: 8px;
   padding: 8px 16px;
-  border: solid thin rgb(0, 0, 0);
+  /* border: solid thin rgb(0, 0, 0); */
+  border: unset;
   border-radius: 32px;
   font-size: 1em;
+  font-weight: 600;
+  color: white;
   cursor: pointer;
 }
