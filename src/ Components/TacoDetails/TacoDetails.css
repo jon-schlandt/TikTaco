@@ -20,27 +20,28 @@ main.details {
   object-position: center;
 }
 
-.favorite-btn {
-  background-color: unset;
-  width: 32px;
-  height: 32px;
+.favorite-btn,
+.favorite-btn-selected {
+  background-position: center;
+  background-size: 32px;
+  background-repeat: no-repeat;
+  bottom: 16px;
+  right: 16px;
+  width: 48px;
+  height: 48px;
   position: absolute;
-  border: unset;
+  border: solid 2px rgb(0, 0, 0);
+  border-radius: 50%;
   cursor: pointer;
 }
 
 .favorite-btn {
   background-image: url('./favorite_btn.svg');
-  background-position: center;
-  background-size: cover;
-  bottom: 16px;
-  left: 16px;
 }
 
-/* .taco-details > .display-text {
-  margin: 0 16px;
-  margin-bottom: 16px;
-} */
+.favorite-btn-selected {
+  background-image: url('./favorite_btn_selected.svg');
+}
 
 .details-text {
   margin: 16px;
@@ -68,12 +69,12 @@ main.details {
 }
 
 .recipe-list li::before {
-  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: #FE2C55; /* Change the color */
-  font-weight: 800; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 16px; /* Also needed for space (tweak if needed) */
-  margin-left: 0 /* Also needed for space (tweak if needed) */
+  content: "\2022";
+  color: #FE2C55;
+  font-weight: 800;
+  display: inline-block;
+  width: 16px;
+  margin-left: 0;
 }
 
 .recipe-list > h1 {

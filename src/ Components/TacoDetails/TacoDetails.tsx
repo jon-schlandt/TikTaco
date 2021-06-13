@@ -13,7 +13,7 @@ export default function TacoDetails({tacoDetails, handleClick}: IProps) {
     <div className='taco-details'>
       <div className='taco-image'>
         <button 
-          className='favorite-btn'
+          className={tacoDetails.isFavorited ? 'favorite-btn-selected': 'favorite-btn'}
           onClick={() => handleClick(tacoDetails)}
         ></button>
         <img src={tacoDetails.image} alt={`${tacoDetails.base_layer.name} taco`} />
