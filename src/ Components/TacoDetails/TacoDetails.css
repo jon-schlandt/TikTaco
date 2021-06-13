@@ -1,12 +1,17 @@
+main.details {
+  padding: unset;
+}
+
 .taco-details {
-  max-width: 900px;
+  max-width: 1024px;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
 }
 
 .taco-image {
   height: 160px;
   position: relative;
-  margin-bottom: 16px;
 }
 
 .taco-image > img {
@@ -16,42 +21,89 @@
   object-position: center;
 }
 
-.favorite-btn {
-  background-color: unset;
-  width: 32px;
-  height: 32px;
+.favorite-btn,
+.favorite-btn-selected {
+  background-position: center;
+  background-size: 32px;
+  background-repeat: no-repeat;
+  bottom: 16px;
+  right: 16px;
+  width: 48px;
+  height: 48px;
   position: absolute;
-  border: unset;
+  border: solid 2px rgb(0, 0, 0);
+  border-radius: 50%;
   cursor: pointer;
 }
 
 .favorite-btn {
   background-image: url('./favorite_btn.svg');
-  background-position: center;
-  background-size: cover;
-  top: 8px;
-  right: 8px;
 }
 
-.taco-details > .display-text {
-  margin: unset;
-  margin-bottom: 16px;
+.favorite-btn-selected {
+  background-image: url('./favorite_btn_selected.svg');
+}
+
+.details-text {
+  margin: 16px;
+  padding-bottom: 24px;
+  border-bottom: solid 1px rgba(0, 0, 0, .15);
+}
+
+.details-text > .primary-toppings {
+  margin-bottom: 8px;
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+.details-text > .secondary-toppings {
+  margin-left: 8px;
+  padding-left: 8px;
+  border-left: solid 4px #FE2C55;
+  font-size: 1em;
+  font-weight: lighter;
 }
 
 .recipe-list {
-  list-style: none;
+  max-width: 900px;
+  margin: 0 16px;
+  list-style-type: none;
+}
+
+.recipe-list li::before {
+  content: "\2022";
+  color: #FE2C55;
+  font-weight: 800;
+  display: inline-block;
+  width: 16px;
+  margin-left: 0;
 }
 
 .recipe-list > h1 {
+  margin-bottom: 8px;
   font-size: 1.25em;
-  margin-bottom: 4px;
+  font-weight: 700;
 }
 
 .recipe-list > li {
-  margin-bottom: 4px;
+  margin: 0 0 8px 8px;
+  font-size: 1em;
+  font-weight: 500;
 }
 
 .recipe-list a {
   text-decoration: unset;
   color: inherit;
+}
+
+@media only screen and (min-width: 460px) {
+  .taco-image {
+    height: 256px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .taco-image {
+    height: 376px;
+  }
 }

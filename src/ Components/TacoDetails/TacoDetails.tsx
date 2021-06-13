@@ -1,6 +1,4 @@
-import { Link } from 'react-router-dom'
-
-import { formatDisplayText, IShapedTacoDetails } from '../../utils/utilites'
+import { formatDetailsText, IShapedTacoDetails } from '../../utils/utilites'
 import './TacoDetails.css'
 
 interface IProps {
@@ -9,13 +7,13 @@ interface IProps {
 }
 
 export default function TacoDetails({tacoDetails, handleClick}: IProps) {
-  const displayText = formatDisplayText(tacoDetails)
+  const displayText = formatDetailsText(tacoDetails)
 
   return (
     <div className='taco-details'>
       <div className='taco-image'>
         <button 
-          className='favorite-btn'
+          className={tacoDetails.isFavorited ? 'favorite-btn-selected': 'favorite-btn'}
           onClick={() => handleClick(tacoDetails)}
         ></button>
         <img src={tacoDetails.image} alt={`${tacoDetails.base_layer.name} taco`} />

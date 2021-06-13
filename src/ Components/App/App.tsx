@@ -70,7 +70,7 @@ function App() {
             return (
               generatedTacos &&
                 <>
-                  <main>
+                  <main className='details'>
                     <TacoDetails 
                       tacoDetails={generatedTacos.find(taco => taco.id === match.params.id)}
                       handleClick={toggleFavorite}

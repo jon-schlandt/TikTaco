@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import SecondaryButton from '../Buttons/SecondaryButton/SecondaryButton'
 import './Footer.css'
 
 interface IProps {
@@ -11,12 +11,10 @@ export default function Footer({ isHome, handleClick }: IProps) {
     <footer>
       {!isHome && 
         <nav>
-          <button 
-            className='back-btn'
-            onClick={handleClick}
-          >
-            Go back
-          </button>
+          <SecondaryButton 
+            text='Go back'
+            handleClick={handleClick}
+          />
         </nav>
       }
     </footer>
