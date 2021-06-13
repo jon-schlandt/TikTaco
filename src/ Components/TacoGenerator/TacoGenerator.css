@@ -16,18 +16,31 @@
   position: sticky;
   margin-bottom: 16px;
   font-size: 1.25em;
+  font-weight: 600;
 }
 
 .taco-display > div {
   min-height: 128px;
-  border: solid 1px rgb(0, 0, 0);
+  /* border: solid 1px rgb(0, 0, 0); */
+  padding: 16px;
   border-radius: 8px;
+  box-shadow: inset 0 0 12px rgb(0, 0, 0, .25);
 }
 
 .generation-msg,
 .display-text {
-  margin: 16px;
+  /* margin: 16px; */
   font-size: 1.25em;
+}
+
+.display-text {
+  line-height: 1.25em;
+  font-weight: lighter;
+}
+
+.display-text > span  {
+  font-weight: 600;
+  font-style: normal;
 }
 
 .generator-btns {
