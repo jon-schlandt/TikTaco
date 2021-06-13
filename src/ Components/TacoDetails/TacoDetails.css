@@ -44,7 +44,7 @@ main.details {
 
 .details-text {
   margin: 16px;
-  padding-bottom: 16px;
+  padding-bottom: 24px;
   border-bottom: solid 1px rgba(0, 0, 0, .15);
 }
 
@@ -64,7 +64,16 @@ main.details {
 
 .recipe-list {
   margin: 0 16px;
-  list-style-type: circle #FE2C55;
+  list-style-type: none;
+}
+
+.recipe-list li::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #FE2C55; /* Change the color */
+  font-weight: 800; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 16px; /* Also needed for space (tweak if needed) */
+  margin-left: 0 /* Also needed for space (tweak if needed) */
 }
 
 .recipe-list > h1 {
@@ -76,7 +85,7 @@ main.details {
 .recipe-list > li {
   margin: 0 0 8px 8px;
   font-size: 1em;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .recipe-list a {
