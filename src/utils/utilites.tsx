@@ -59,15 +59,15 @@ export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
 
 export function formatDisplayText(tacoDetails: IShapedTacoDetails) {
   return (
-    <p className='display-text'><span>{tacoDetails.base_layer.name}</span> with <span>{tacoDetails.condiment.name}</span>, ganished with <span>{tacoDetails.mixin.name}</span> topped off with <span>{tacoDetails.seasoning.name}</span> and wrapped in a delicious <span>{tacoDetails.shell.name}</span></p>
+    <p className='display-text'><span>{tacoDetails.base_layer.name}</span> with <span>{tacoDetails.mixin.name}</span>, ganished with <span>{tacoDetails.condiment.name}</span> topped off with <span>{tacoDetails.seasoning.name}</span> and wrapped in a delicious <span>{tacoDetails.shell.name}</span></p>
   )
 }
 
 export function formatDetailsText(tacoDetails: IShapedTacoDetails) {
   return (
     <>
-      <p className='primary-toppings'>{tacoDetails.base_layer.name} with {tacoDetails.condiment.name}</p>
-      <p className='secondary-toppings'>ganished with {tacoDetails.mixin.name} topped with {tacoDetails.seasoning.name} and wrapped in a delicious {tacoDetails.shell.name}</p>
+      <p className='primary-toppings'>{tacoDetails.base_layer.name} with {tacoDetails.mixin.name}</p>
+      <p className='secondary-toppings'>ganished with {tacoDetails.condiment.name} topped with {tacoDetails.seasoning.name} and wrapped in a delicious {tacoDetails.shell.name}</p>
     </>
   )
 }

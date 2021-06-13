@@ -37,8 +37,24 @@ main.details {
   left: 16px;
 }
 
-.taco-details > .display-text {
+/* .taco-details > .display-text {
   margin: 0 16px;
+  margin-bottom: 16px;
+} */
+
+.taco-details > .primary-toppings,
+.taco-details > .secondary-toppings {
+  margin: 0 16px;
+}
+
+.taco-details > .primary-toppings {
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+.taco-details > .secondary-toppings {
+  font-size: 1em;
+  font-weight: lighter;
   margin-bottom: 16px;
 }
 
