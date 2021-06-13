@@ -65,10 +65,10 @@ export function formatDisplayText(tacoDetails: IShapedTacoDetails) {
 
 export function formatDetailsText(tacoDetails: IShapedTacoDetails) {
   return (
-    <>
+    <div className='details-text'>
       <p className='primary-toppings'>{tacoDetails.base_layer.name} with {tacoDetails.mixin.name}</p>
       <p className='secondary-toppings'>ganished with {tacoDetails.condiment.name} topped with {tacoDetails.seasoning.name} and wrapped in a delicious {tacoDetails.shell.name}</p>
-    </>
+    </div>
   )
 }
 
