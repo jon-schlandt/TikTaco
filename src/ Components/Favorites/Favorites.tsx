@@ -1,18 +1,22 @@
 import { Link } from 'react-router-dom'
 
-import { formatDisplayText, IShapedTacoDetails } from "../../utils/utilites"
+import PrimaryButton from '../Buttons/PrimaryButton/PrimaryButton'
+
+import { formatDetailsText, IShapedTacoDetails } from "../../utils/utilites"
 import './Favorites.css'
 
 export default function Favorites({favorites}: {favorites: IShapedTacoDetails[]}) {
   const favoriteDisplays = favorites.map(favorite => {
     return (
-      <Link
-        to={`details/${favorite.id}`} 
+      <div
         key={favorite.id}
         className='favorite-display'
       >
-        {formatDisplayText(favorite)}
-      </Link>
+        {formatDetailsText(favorite)}
+        <Link to={`details/${favorite.id}`}>
+          <PrimaryButton text='View Details' />
+        </Link>
+      </div>
     )
   })
 
