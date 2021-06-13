@@ -8,6 +8,10 @@
   margin: 0 auto;
 }
 
+.taco-display {
+  margin-bottom: 16px;
+}
+
 .greeting {
   position: sticky;
   margin-bottom: 16px;
@@ -15,7 +19,7 @@
 }
 
 .taco-display > div {
-  margin-bottom: 16px;
+  min-height: 128px;
   border: solid 1px rgb(0, 0, 0);
   border-radius: 8px;
 }
