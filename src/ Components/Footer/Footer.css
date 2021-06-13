@@ -6,7 +6,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border-top: solid 1px rgb(0, 0, 0); */
   box-shadow: 0 1px 4px rgb(0, 0, 0, .50);
   z-index: 1;
 }

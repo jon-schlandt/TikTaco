@@ -1,3 +1,7 @@
+main.details {
+  padding: unset;
+}
+
 .taco-details {
   max-width: 900px;
   margin: 0 auto;
@@ -34,11 +38,12 @@
 }
 
 .taco-details > .display-text {
-  margin: unset;
+  margin: 0 16px;
   margin-bottom: 16px;
 }
 
 .recipe-list {
+  margin: 0 16px;
   list-style: none;
 }
 
