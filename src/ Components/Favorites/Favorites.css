@@ -21,15 +21,15 @@
 }
 
 .favorite-display .primary-toppings {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
   font-size: 1.25em;
   font-weight: 600;
 }
 
 .favorite-display .secondary-toppings {
-  margin-bottom: 16px;
-  /* padding-left: 8px;
-  border-left: solid 4px #FE2C55; */
+  margin: 0 0 16px 8px;
+  padding-left: 8px;
+  border-left: solid 4px #FE2C55;
   font-size: 1em;
   font-weight: lighter;
 }
