@@ -37,7 +37,7 @@ export default function Favorites({ favorites, handleClick }: IProps) {
       <h1 className='favorites-title'>My Sharable Tacos</h1>
       {favoriteDisplays.length
         ? favoriteDisplays
-        : <p className='no-favorites-msg'>No tacos added yet. Find a sharable taco!</p>
+        : <p className='no-favorites-msg'>No tacos here. Find a sharable taco!</p>
       }
     </div>
   )
