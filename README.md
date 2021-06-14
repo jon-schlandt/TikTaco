@@ -11,13 +11,17 @@
     - [Project Managers](#project-managers)
 
 ## Overview
-asdf
+Looking to create content for your foodie followers but can't seem to get those creative juices flowing? Has inspiration fled your once illustrious life of posting videos on the internet to random strangers, leaving you staring into the endless abyss of your refridgerator and clinging onto the hope that a half-empty carton of eggs will trigger an idea?
+
+Well close that fridge door, open up your phone, and let TikTaco inspire that next viral hit! With the tap of a button, TikTaco will instantly generate a taco with randomized ingredients, each with their very own recipe. If you find a winner, simply add it to your 'To Share' list so you can reference it later. With TikTaco, let us worry about the thinking, so you can focus on the sharing!
 
 - Deployed [LINK](https://tik-taco.herokuapp.com/)
 - Project Spec [LINK](https://frontend.turing.edu/projects/module-3/niche-audience.html)
 
 ## Features
-asdf
+- Instant generation of a unique and sharable taco
+- Access to each and every topping generated for a taco
+- Favorite a taco you like and share it later
 
 ![Demo of Features](https://media.giphy.com/media/M4IbuJbc3PJqq4lRUm/giphy.gif)
 
@@ -45,11 +49,11 @@ asdf
 1. Run `npx cypress open` to open the Cypress testing GUI
 2. Click on an integration test and allow the test to run
 
-## Future Iterations
-asdf
+## Future Improvements
+- Currently, random images are being generated for each taco via Unplash's API. Although the images mostly match, some do not and this can be a bit confusing. In the future, I'd like to build my own backend for holding my own collection of taco-related imagery.
 
 ## Credits
-#### Authors
+#### Author
 <table>
   <tr>
     <td> Jon Schlandt <a href="https://github.com/jon-schlandt">GH</td>
