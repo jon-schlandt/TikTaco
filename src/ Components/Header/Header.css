@@ -17,5 +17,10 @@ header {
 }
 
 .view-favorites {
-  width: 32px;
+  display: flex;
+}
+
+.view-favorites > img {
+  width: 36px;
+  align-self: center;
 }
