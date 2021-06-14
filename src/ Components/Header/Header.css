@@ -12,8 +12,9 @@ header {
 }
 
 .app-title > h1 {
-  font-size: 1.25em;
+  font-size: 1.6em;
   font-weight: 600;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 .view-favorites {
@@ -21,6 +22,6 @@ header {
 }
 
 .view-favorites > img {
-  width: 36px;
+  width: 32px;
   align-self: center;
 }
