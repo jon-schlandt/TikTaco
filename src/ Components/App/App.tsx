@@ -91,7 +91,10 @@ function App() {
             return (
               <>
                 <main>
-                  <Favorites favorites={getFavorites()} />
+                  <Favorites 
+                    favorites={getFavorites()}
+                    handleClick={toggleFavorite} 
+                  />
                 </main>
                 <Footer 
                   isHome={false}

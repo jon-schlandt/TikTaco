@@ -34,6 +34,12 @@
   font-weight: lighter;
 }
 
-.favorite-display a {
+.favorite-display-btns {
+  width: max-content;
   align-self: flex-end;
+  border: unset;
+}
+
+.favorite-display-btns > .secondary-btn {
+  margin-right: 16px;
 }
