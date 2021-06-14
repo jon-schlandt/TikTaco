@@ -6,8 +6,6 @@
 .favorites-title {
   width: max-content;
   margin-bottom: 24px;
-  padding-left: 8px;
-  border-left: solid 4px #FE2C55;
   font-size: 1.25em;
   font-weight: 700;
 }
