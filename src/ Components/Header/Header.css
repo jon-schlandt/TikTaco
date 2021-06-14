@@ -1,5 +1,5 @@
 header {
-  background: radial-gradient(rgb(255, 255, 255) 0%, rgb(245, 245, 245) 100%);
+  background: radial-gradient(rgb(255, 255, 255) 0%, rgb(250, 250, 250) 100%);
   grid-row: 1;
   position: sticky;
   top: 0;
@@ -12,10 +12,16 @@ header {
 }
 
 .app-title > h1 {
-  font-size: 1.25em;
+  font-size: 1.6em;
   font-weight: 600;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 .view-favorites {
+  display: flex;
+}
+
+.view-favorites > img {
   width: 32px;
+  align-self: center;
 }
