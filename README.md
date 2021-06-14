@@ -11,19 +11,30 @@
     - [Project Managers](#project-managers)
 
 ## Overview
-Looking to create content for your foodie followers but can't seem to get those creative juices flowing? Has inspiration fled your once illustrious life of posting videos on the internet to random strangers, leaving you staring into the endless abyss of your refridgerator and clinging onto the hope that a half-empty carton of eggs will trigger an idea?
+Looking to create content for your foodie followers but can't seem to get those creative juices flowing? Has inspiration fled your once illustrious life of posting videos on the internet to random strangers, leaving you staring into the endless abyss of your refridgerator and clinging onto the hope that a half-empty carton of eggs will spur an idea?
 
-Well close that fridge door, open up your phone, and let TikTaco inspire that next viral hit! With the tap of a button, TikTaco will instantly generate a taco with randomized ingredients, each with their very own recipe. If you find a winner, simply add it to your 'To Share' list so you can reference it later. With TikTaco, let us worry about the thinking, so you can focus on the sharing!
+Well close that fridge door, open up your phone, and let TikTaco inspire that next viral hit! With the tap of a button, TikTaco will instantly generate a taco with randomized toppings - each with their very own recipe. If you find a winner, simply add it to your 'To Share' list so you can reference it later. With TikTaco, let us worry about the thinking, so you can focus on the sharing!
 
 - Deployed [LINK](https://tik-taco.herokuapp.com/)
 - Project Spec [LINK](https://frontend.turing.edu/projects/module-3/niche-audience.html)
 
 ## Features
 - Instant generation of a unique and sharable taco
-- Access to each and every topping generated for a taco
-- Favorite a taco you like and share it later
+- Access to the recipe of each and every topping generated
+- The ability to favorite a taco you like, so it can be shared later
 
-![Demo of Features](https://media.giphy.com/media/M4IbuJbc3PJqq4lRUm/giphy.gif)
+<table>
+    <tr>
+        <td>Generating a Taco</td>
+        <td>Viewing a Recipe</td>
+        <td>Favoriting a Taco</td>
+    </tr>
+    </tr>
+        <td><img src="https://media.giphy.com/media/12dcyQL3fbSywNpvTa/giphy.gif" width="175px" height="auto" /></td>
+        <td><img src="https://media.giphy.com/media/kuCbE91lXwkAHzLxwj/giphy.gif" alt="Plan a trips" width="175px" height="auto" /></td>
+        <td><img src="https://media.giphy.com/media/ctMqrLjJSKgHge78TF/giphy.gif" width="175px" height="auto" /></td>
+    </tr>
+</table>
 
 ## Technologies Used
 * ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
