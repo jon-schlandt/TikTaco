@@ -11,7 +11,7 @@ export async function getTacoDetails() {
 }
 
 async function getTacoData() {
-  const resp = await fetch('http://taco-randomizer.herokuapp.com/random/');
+  const resp = await fetch('https://taco-randomizer.herokuapp.com/random/');
   return checkResponse(resp);
 }
 
