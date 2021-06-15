@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 import './Header.css'
 import favoritesBtn from './view_favorites.svg'
@@ -9,12 +9,11 @@ export default function Header() {
       <Link className='app-title' to='/'>
         <h1>TikTaco</h1>
       </Link>
-      <Link
+      <NavLink
         className='view-favorites'
+        activeClassName='active'
         to='/favorites'
-      >
-        <img src={favoritesBtn} alt='view favorites'/>
-      </Link>
+      />
     </header>
   )
 }

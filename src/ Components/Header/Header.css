@@ -18,10 +18,12 @@ header {
 }
 
 .view-favorites {
-  display: flex;
+  background-image: url('./view_favorites.svg');
+  width: 32px;
+  height: 32px;
+  display: block;
 }
 
-.view-favorites > img {
-  width: 32px;
-  align-self: center;
+.active {
+  background-image: url('./view_favorites_active.svg');
 }

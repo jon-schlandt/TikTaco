@@ -9,7 +9,7 @@
 }
 
 .taco-display {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .greeting {
@@ -51,4 +51,10 @@
 
 .generator-btns > a > .primary-btn {
   margin-bottom: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+  .taco-generator {
+    justify-content: flex-start;
+  }
 }
