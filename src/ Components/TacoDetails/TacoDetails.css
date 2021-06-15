@@ -32,6 +32,7 @@ main.details {
   height: 44px;
   position: absolute;
   border: unset;
+  transition: ease-out .25s;
   cursor: pointer;
 }
 
