@@ -69,15 +69,6 @@ main.details {
   list-style-type: none;
 }
 
-.recipe-list li::before {
-  content: "\2022";
-  color: #FE2C55;
-  font-weight: 800;
-  display: inline-block;
-  width: 16px;
-  margin-left: 0;
-}
-
 .recipe-list > h1 {
   margin-bottom: 8px;
   font-size: 1.25em;
@@ -90,9 +81,22 @@ main.details {
   font-weight: 500;
 }
 
+.recipe-list li::before {
+  content: "\2022";
+  color: #FE2C55;
+  font-weight: 800;
+  display: inline-block;
+  width: 16px;
+  margin-left: 0;
+}
+
 .recipe-list a {
   text-decoration: unset;
   color: inherit;
+}
+
+.recipe-list a:hover {
+  border-bottom: solid 2px #FE2C55;
 }
 
 @media only screen and (min-width: 460px) {
