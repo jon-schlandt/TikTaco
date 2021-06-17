@@ -30,26 +30,11 @@ export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
   
   return { 
     id: formatId(data.tacoData),
-    base_layer: {
-      name: base_layer.name,
-      url: base_layer.url
-    },
-    mixin: {
-      name: mixin.name,
-      url: mixin.url
-    },
-    condiment: {
-      name: condiment.name,
-      url: condiment.url
-    },
-    seasoning: {
-      name: seasoning.name,
-      url: seasoning.url
-    },
-    shell: {
-      name: shell.name,
-      url: shell.url
-    },
+    base_layer: { name: base_layer.name, url: base_layer.url },
+    mixin: { name: mixin.name, url: mixin.url},
+    condiment: { name: condiment.name, url: condiment.url },
+    seasoning: { name: seasoning.name, url: seasoning.url },
+    shell: { name: shell.name, url: shell.url },
     image: data.tacoImage.urls.regular,
     isFavorited: false
   }
