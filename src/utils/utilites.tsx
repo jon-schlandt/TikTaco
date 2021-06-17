@@ -40,6 +40,16 @@ export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
   }
 }
 
+export function verifyArticle(word: string) {
+  const wordLC = word.toLowerCase()
+
+  if (wordLC === 'the' || wordLC === 'a' || wordLC === 'or') {
+    return true
+  }
+
+  return false
+}
+
 // ***** ----- General purpose ----- ***** //
 
 export function formatDisplayText(tacoDetails: IShapedTacoDetails) {
