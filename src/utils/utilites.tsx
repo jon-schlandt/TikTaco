@@ -40,7 +40,23 @@ export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
   }
 }
 
-export function verifyArticle(word: string) {
+function capitalizeName(name: string) {
+  const nameArr = name.split(' ')
+  
+  return nameArr.map((word, index) => {
+    const firstChar = word.substring(0, 1)
+    const remainingChars = word.substring(1)
+
+    if ((verifyArticle(word) && index !== 0)) {
+      console.log(word)
+      return word
+    }
+
+    return firstChar.toUpperCase().concat(remainingChars)
+  }).join(' ')
+}
+
+function verifyArticle(word: string) {
   const wordLC = word.toLowerCase()
 
   if (wordLC === 'the' || wordLC === 'a' || wordLC === 'or') {
