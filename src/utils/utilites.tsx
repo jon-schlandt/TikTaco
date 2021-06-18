@@ -39,7 +39,7 @@ export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
     mixin: { name: mixin.name, url: mixin.url},
     condiment: { name: condiment.name, url: condiment.url },
     seasoning: { name: seasoning.name, url: seasoning.url },
-    shell: { name: shell.name, url: shell.url },
+    shell: { name: trimName(shell.name), url: shell.url },
     image: data.tacoImage.urls.regular,
     isFavorited: false
   }
@@ -71,12 +71,17 @@ function verifyArticle(word: string) {
 }
 
 function trimName(name: string) {
-  const nameArr = name.split(' ')
-  let lastWord = nameArr[nameArr.length - 1].toLowerCase()
+  let nameArr = name.split(' ')
+  let lastWord = nameArr[nameArr.length - 1]
 
   if (lastWord[lastWord.length - 1] === 's') {
     lastWord = lastWord.slice(0, lastWord.length - 1)
   }
+
+  nameArr.splice(nameArr.length - 1, 1)
+  nameArr.push(lastWord)
+
+  return nameArr.join(' ')
 }
 
 // ***** ----- General purpose ----- ***** //
