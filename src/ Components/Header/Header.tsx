@@ -1,7 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 
 import './Header.css'
-import favoritesBtn from './view_favorites.svg'
 
 export default function Header() {
   return (

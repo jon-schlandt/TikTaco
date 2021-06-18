@@ -48,7 +48,6 @@ function capitalizeName(name: string) {
     const remainingChars = word.substring(1)
 
     if ((verifyArticle(word) && index !== 0)) {
-      console.log(word)
       return word
     }
 
