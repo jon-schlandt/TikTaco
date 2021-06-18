@@ -60,7 +60,7 @@ function capitalizeName(name: string) {
   }).join(' ')
 }
 
-const verifyArticle = (word: string) => {
+function verifyArticle(word: string) {
   const articles = ['a', 'and', 'about', 'the', 'of', 'or']
 
   if (articles.includes(word.toLowerCase())) {
@@ -68,6 +68,15 @@ const verifyArticle = (word: string) => {
   }
 
   return false
+}
+
+function trimName(name: string) {
+  const nameArr = name.split(' ')
+  let lastWord = nameArr[nameArr.length - 1].toLowerCase()
+
+  if (lastWord[lastWord.length - 1] === 's') {
+    lastWord = lastWord.slice(0, lastWord.length - 1)
+  }
 }
 
 // ***** ----- General purpose ----- ***** //
