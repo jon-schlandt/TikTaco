@@ -55,10 +55,10 @@ function capitalizeName(name: string) {
   }).join(' ')
 }
 
-function verifyArticle(word: string) {
-  const wordLC = word.toLowerCase()
+const verifyArticle = (word: string) => {
+  const articles = ['a', 'and', 'about', 'the', 'of', 'or']
 
-  if (wordLC === 'the' || wordLC === 'a' || wordLC === 'or') {
+  if (articles.includes(word.toLowerCase())) {
     return true
   }
 
