@@ -27,6 +27,11 @@ interface IToppingData {
 
 export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
   const { base_layer, mixin, condiment, seasoning, shell } = data.tacoData
+  const toppings = [ base_layer, mixin, condiment, seasoning, shell ]
+
+  toppings.forEach(topping => {
+    topping.name = formatName(topping.name)
+  })
   
   return { 
     id: formatId(data.tacoData),
@@ -34,10 +39,14 @@ export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
     mixin: { name: mixin.name, url: mixin.url},
     condiment: { name: condiment.name, url: condiment.url },
     seasoning: { name: seasoning.name, url: seasoning.url },
-    shell: { name: shell.name, url: shell.url },
+    shell: { name: trimName(shell.name), url: shell.url },
     image: data.tacoImage.urls.regular,
     isFavorited: false
   }
+}
+
+function formatName(name: string) {
+  return filterName(capitalizeName(name))
 }
 
 function capitalizeName(name: string) {
@@ -56,13 +65,35 @@ function capitalizeName(name: string) {
 }
 
 function verifyArticle(word: string) {
-  const wordLC = word.toLowerCase()
+  const articles = ['a', 'and', 'about', 'the', 'of', 'or']
 
-  if (wordLC === 'the' || wordLC === 'a' || wordLC === 'or') {
+  if (articles.includes(word.toLowerCase())) {
     return true
   }
 
   return false
+}
+
+function filterName(name: string) {
+  if (name.includes('(Traditional; US')) {
+    name = name.replace('(Traditional; US)', '')
+  }
+
+  return name
+}
+
+function trimName(name: string) {
+  let nameArr = name.split(' ')
+  let lastWord = nameArr[nameArr.length - 1]
+
+  if (lastWord[lastWord.length - 1] === 's') {
+    lastWord = lastWord.slice(0, lastWord.length - 1)
+  }
+
+  nameArr.splice(nameArr.length - 1, 1)
+  nameArr.push(lastWord)
+
+  return nameArr.join(' ')
 }
 
 // ***** ----- General purpose ----- ***** //
