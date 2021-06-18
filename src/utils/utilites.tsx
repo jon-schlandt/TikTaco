@@ -30,7 +30,7 @@ export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
   const toppings = [ base_layer, mixin, condiment, seasoning, shell ]
 
   toppings.forEach(topping => {
-    topping.name = capitalizeName(topping.name)
+    topping.name = formatName(topping.name)
   })
   
   return { 
@@ -43,6 +43,10 @@ export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
     image: data.tacoImage.urls.regular,
     isFavorited: false
   }
+}
+
+function formatName(name: string) {
+  return filterName(capitalizeName(name))
 }
 
 function capitalizeName(name: string) {
@@ -68,6 +72,14 @@ function verifyArticle(word: string) {
   }
 
   return false
+}
+
+function filterName(name: string) {
+  if (name.includes('(Traditional; US')) {
+    name = name.replace('(Traditional; US)', '')
+  }
+
+  return name
 }
 
 function trimName(name: string) {
