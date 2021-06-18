@@ -76,7 +76,7 @@ function verifyArticle(word: string) {
 
 function filterName(name: string) {
   if (name.includes('(Traditional; US')) {
-    name = name.replace('(Traditional; US)', '')
+    name = name.replace(' (Traditional; US)', '')
   }
 
   return name
