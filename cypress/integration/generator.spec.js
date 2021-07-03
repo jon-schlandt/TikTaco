@@ -31,7 +31,7 @@ describe('Generate Taco button', () => {
 
   it('should generate a random taco that displays in the taco display when clicked', () => {
     cy.get('.taco-display')
-      .find('p').contains('Baked Tilapia with Black Olives, ganished with Lettuce (Traditional; US) topped off with Mahi Mahi Rub and wrapped in a delicious Fresh Corn Tortillas')
+      .find('p').contains('Baked Tilapia with Lettuce, ganished with Black Olives topped off with Mahi Mahi Rub and wrapped in a delicious Fresh Corn Tortilla')
   })
 
   it('should update its inner text to \'View Details\' when clicked', () => {
