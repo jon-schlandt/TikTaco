@@ -35,7 +35,7 @@ Cypress.Commands.add('setTacoIntercepts', () => {
 })
 
 Cypress.Commands.add('setErrorIntercept', (statusCode) => {
-  cy.intercept('http://taco-randomizer.herokuapp.com/random/', {statusCode})
+  cy.intercept('https://taco-randomizer.herokuapp.com/random/', {statusCode})
 })
 
 Cypress.Commands.add('generateTaco', () => {
