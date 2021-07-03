@@ -28,10 +28,10 @@ export {}
 
 Cypress.Commands.add('setTacoIntercepts', () => {
   cy.fixture('../fixtures/taco-data.json')
-    .then(data => cy.intercept('http://taco-randomizer.herokuapp.com/random/', data))
+    .then(data => cy.intercept('https://taco-randomizer.herokuapp.com/random/', data))
 
   cy.fixture('../fixtures/taco-image.json')
-    .then(image => cy.intercept('https://api.unsplash.com/photos/random?query=taco', image))
+    .then(image => cy.intercept('https://api.unsplash.com/photos/random?query=tortilla', image))
 })
 
 Cypress.Commands.add('setErrorIntercept', (statusCode) => {

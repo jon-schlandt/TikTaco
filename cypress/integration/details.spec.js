@@ -4,7 +4,7 @@ describe('\'View Details\' button', () => {
   })
 
   it('should render the TacoDetails page when clicked', () => {
-    cy.get('.taco-generator > a').click()
+    cy.get('.taco-generator a').click()
       .url().should('eq', 'http://localhost:3000/details/LBBFM')
   })
 })
@@ -12,7 +12,7 @@ describe('\'View Details\' button', () => {
 describe('TacoDetails on render', () => {
   beforeEach('set up tests', () => {
     cy.generateTaco()
-    cy.get('.taco-generator > a').click()
+    cy.get('.taco-generator a').click()
   })
 
   it('should display an image of a taco', () => {
@@ -36,15 +36,17 @@ describe('TacoDetails on render', () => {
   })
 
   it('should render display text for a taco', () => {
-    cy.get('.display-text').should('be.visible')
-      .contains('Baked Tilapia with Black Olives, ganished with Lettuce (Traditional; US) topped off with Mahi Mahi Rub and wrapped in a delicious Fresh Corn Tortillas')
+    cy.get('.details-text').should('be.visible')
+      .find('.primary-toppings').contains('Baked Tilapia with Lettuce')
+      .next().contains('ganished with Black Olives topped with Mahi Mahi Rub and wrapped in a delicious Fresh Corn Tortilla')
   })
 
   it('should continue to display a taco\'s display text upon page reload', () => {
     cy.reload() 
 
-    cy.get('.display-text').should('be.visible')
-      .contains('Baked Tilapia with Black Olives, ganished with Lettuce (Traditional; US) topped off with Mahi Mahi Rub and wrapped in a delicious Fresh Corn Tortillas')
+    cy.get('.details-text').should('be.visible')
+      .find('.primary-toppings').contains('Baked Tilapia with Lettuce')
+      .next().contains('ganished with Black Olives topped with Mahi Mahi Rub and wrapped in a delicious Fresh Corn Tortilla')
   })
 
   it('should display each of a taco\'s toppings', () => {
@@ -57,7 +59,7 @@ describe('TacoDetails on render', () => {
       .parent().next().contains('Lettuce')
       .parent().next().contains('Black Olives')
       .parent().next().contains('Mahi Mahi Rub')
-      .parent().next().contains('Fresh Corn Tortillas')
+      .parent().next().contains('Fresh Corn Tortilla')
   })
 
   it('should continue to display a taco\'s toppings upon page reload', () => {
@@ -78,11 +80,11 @@ describe('TacoDetails on render', () => {
 describe('Back button', () => {
   beforeEach('set up tests', () => {
     cy.generateTaco()
-    cy.get('.taco-generator > a').click()
+    cy.get('.taco-generator a').click()
   })
 
   it('should navigate back to the TacoGeneration page when clicked', () => {
-    cy.get('.back-btn').should('be.visible').click()
+    cy.get('footer button').should('be.visible').click()
       .url().should('eq', 'http://localhost:3000/')  
   })
 })
