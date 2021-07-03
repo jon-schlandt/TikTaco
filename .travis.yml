@@ -8,12 +8,9 @@ cache:
   directories:
     - ~/.npm
     - ~/.cache
-  # install dependencies and check that Cypress can run
-  override:
-    - npm ci
-    - npm run cy:verify
 
 script:
+  - npm install cypress
   # start server in the background
   - npm start &
   # run all Cypress tests and record on the dashboard
