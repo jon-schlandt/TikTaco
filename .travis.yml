@@ -12,7 +12,7 @@ cache:
 script:
   - npm install cypress
   # start server in the background
-  - npm start &
+  - npm start & wait-on http://localhost:8080
   # run all Cypress tests and record on the dashboard
   - npm test
   # after all tests finish running we need
