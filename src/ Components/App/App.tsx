@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Route } from 'react-router-dom'
 
 import Header from '../Header/Header'
+import SiteNotification from '../SiteNotification/SiteNotification'
 import TacoGenerator from '../TacoGenerator/TacoGenerator'
 import TacoDetails from '../TacoDetails/TacoDetails'
 import Favorites from '../Favorites/Favorites'
@@ -54,46 +55,27 @@ function App() {
   return (
     <div className="App">
       <Header />
-        <Route exact path='/'>
-          <main>
-            <TacoGenerator 
-              tacoDetails={tacoDetails}
-              error={error}
-              handleClick={generateTaco}
-            />
-          </main>
-          <Footer isHome={true} />
-        </Route>
-        <Route 
-          exact path='/details/:id'
-          render={({ match, history }) => {
-            return (
-              generatedTacos &&
-                <>
-                  <main className='details'>
-                    <TacoDetails 
-                      tacoDetails={generatedTacos.find(taco => taco.id === match.params.id)}
-                      handleClick={toggleFavorite}
-                    />
-                  </main>
-                  <Footer 
-                    isHome={false}
-                    handleClick={history.goBack}
-                  />
-                </>
-            )
-          }}
-        >
-        </Route>
-        <Route 
-          exact path='/favorites'
-          render={({ history }) => {
-            return (
+      <SiteNotification />
+      <Route exact path='/'>
+        <main>
+          <TacoGenerator 
+            tacoDetails={tacoDetails}
+            error={error}
+            handleClick={generateTaco}
+          />
+        </main>
+        <Footer isHome={true} />
+      </Route>
+      <Route 
+        exact path='/details/:id'
+        render={({ match, history }) => {
+          return (
+            generatedTacos &&
               <>
-                <main>
-                  <Favorites 
-                    favorites={getFavorites()}
-                    handleClick={toggleFavorite} 
+                <main className='details'>
+                  <TacoDetails 
+                    tacoDetails={generatedTacos.find(taco => taco.id === match.params.id)}
+                    handleClick={toggleFavorite}
                   />
                 </main>
                 <Footer 
@@ -101,9 +83,29 @@ function App() {
                   handleClick={history.goBack}
                 />
               </>
-            )
-          }}
-        />
+          )
+        }}
+      >
+      </Route>
+      <Route 
+        exact path='/favorites'
+        render={({ history }) => {
+          return (
+            <>
+              <main>
+                <Favorites 
+                  favorites={getFavorites()}
+                  handleClick={toggleFavorite} 
+                />
+              </main>
+              <Footer 
+                isHome={false}
+                handleClick={history.goBack}
+              />
+            </>
+          )
+        }}
+      />
     </div>
   );
 }
