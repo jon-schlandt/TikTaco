@@ -12,3 +12,17 @@
   overflow: auto;
   z-index: 2;
 }
+
+.site-notification {
+  background: rgb(254, 254, 254);
+  width: 100%;
+  max-width: 960px;
+  height: fit-content;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 10%;
+  border-radius: 8px;
+  box-shadow: -4px 4px 16px 1px rgba(0, 0, 0, .20);
+  z-index: 3;
+}
