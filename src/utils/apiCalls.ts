@@ -11,7 +11,11 @@ export async function getTacoDetails() {
 }
 
 async function getTacoData() {
-  const resp = await fetch('https://taco-randomizer.herokuapp.com/random/');
+  const endpoint = process.env.NODE_ENV === 'production'
+    ? 'https://tiktaco-api.herokuapp.com'
+    : 'http://localhost:3001'
+
+  const resp = await fetch(endpoint);
   return checkResponse(resp);
 }
 

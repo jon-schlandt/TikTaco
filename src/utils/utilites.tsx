@@ -22,7 +22,7 @@ export interface ITacoData {
 
 interface IToppingData { 
   name: string,
-  url: string
+  recipe_link: string
 }
 
 export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
@@ -35,11 +35,11 @@ export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
   
   return { 
     id: formatId(data.tacoData),
-    base_layer: { name: base_layer.name, url: base_layer.url },
-    mixin: { name: mixin.name, url: mixin.url},
-    condiment: { name: condiment.name, url: condiment.url },
-    seasoning: { name: seasoning.name, url: seasoning.url },
-    shell: { name: trimName(shell.name), url: shell.url },
+    base_layer: { name: base_layer.name, recipe_link: base_layer.recipe_link },
+    mixin: { name: mixin.name, recipe_link: mixin.recipe_link},
+    condiment: { name: condiment.name, recipe_link: condiment.recipe_link },
+    seasoning: { name: seasoning.name, recipe_link: seasoning.recipe_link },
+    shell: { name: trimName(shell.name), recipe_link: shell.recipe_link },
     image: data.tacoImage.urls.regular,
     isFavorited: false
   }
