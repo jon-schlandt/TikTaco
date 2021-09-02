@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { Route } from 'react-router-dom'
 
 import Header from '../Header/Header'
-import SiteNotification from '../SiteNotification/SiteNotification'
 import TacoGenerator from '../TacoGenerator/TacoGenerator'
 import TacoDetails from '../TacoDetails/TacoDetails'
 import Favorites from '../Favorites/Favorites'

@@ -27,11 +27,11 @@ interface IToppingData {
 
 export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
   const { base_layer, mixin, condiment, seasoning, shell } = data.tacoData
-  const toppings = [ base_layer, mixin, condiment, seasoning, shell ]
+  // const toppings = [ base_layer, mixin, condiment, seasoning, shell ]
 
-  toppings.forEach(topping => {
-    topping.name = formatName(topping.name)
-  })
+  // toppings.forEach(topping => {
+  //   topping.name = formatName(topping.name)
+  // })
   
   return { 
     id: formatId(data.tacoData),
@@ -45,42 +45,42 @@ export function shapeTacoDetails(data: ITacoDetails): IShapedTacoDetails {
   }
 }
 
-function formatName(name: string) {
-  return filterName(capitalizeName(name))
-}
+// function formatName(name: string) {
+//   return filterName(capitalizeName(name))
+// }
 
-function capitalizeName(name: string) {
-  const nameArr = name.split(' ')
+// function capitalizeName(name: string) {
+//   const nameArr = name.split(' ')
   
-  return nameArr.map((word, index) => {
-    const firstChar = word.substring(0, 1)
-    const remainingChars = word.substring(1)
+//   return nameArr.map((word, index) => {
+//     const firstChar = word.substring(0, 1)
+//     const remainingChars = word.substring(1)
 
-    if ((verifyArticle(word) && index !== 0)) {
-      return word
-    }
+//     if ((verifyArticle(word) && index !== 0)) {
+//       return word
+//     }
 
-    return firstChar.toUpperCase().concat(remainingChars)
-  }).join(' ')
-}
+//     return firstChar.toUpperCase().concat(remainingChars)
+//   }).join(' ')
+// }
 
-function verifyArticle(word: string) {
-  const articles = ['a', 'and', 'about', 'the', 'of', 'or']
+// function verifyArticle(word: string) {
+//   const articles = ['a', 'and', 'about', 'the', 'of', 'or']
 
-  if (articles.includes(word.toLowerCase())) {
-    return true
-  }
+//   if (articles.includes(word.toLowerCase())) {
+//     return true
+//   }
 
-  return false
-}
+//   return false
+// }
 
-function filterName(name: string) {
-  if (name.includes('(Traditional; US')) {
-    name = name.replace(' (Traditional; US)', '')
-  }
+// function filterName(name: string) {
+//   if (name.includes('(Traditional; US')) {
+//     name = name.replace(' (Traditional; US)', '')
+//   }
 
-  return name
-}
+//   return name
+// }
 
 function trimName(name: string) {
   let nameArr = name.split(' ')
