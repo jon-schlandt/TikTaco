@@ -55,7 +55,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <SiteNotification />
       <Route exact path='/'>
         <main>
           <TacoGenerator 
