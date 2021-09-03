@@ -11,11 +11,7 @@ export async function getTacoDetails() {
 }
 
 async function getTacoData() {
-  const endpoint = process.env.NODE_ENV === 'production'
-    ? 'https://tiktaco-api.herokuapp.com/api/generate'
-    : 'http://localhost:3001/api/generate'
-
-  const resp = await fetch(endpoint);
+  const resp = await fetch(`${process.env.REACT_APP_API_URL}/api/generate`);
   return checkResponse(resp);
 }
 
