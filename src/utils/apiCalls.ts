@@ -16,7 +16,7 @@ async function getTacoData() {
 }
 
 async function getTacoImage() {
-  const resp = await fetch('https://api.unsplash.com/photos/random?query=tortilla', { headers: { Authorization: 'Client-ID SVh3qN5qzhFdLisOJQj9vdBuBYOFNI6FNPrWcweQsZM' } });
+  const resp = await fetch('https://api.unsplash.com/photos/random?query=tortilla', { headers: { Authorization: `${process.env.REACT_APP_UNSPLASH_KEY}` } });
   return checkResponse(resp);
 }
 
